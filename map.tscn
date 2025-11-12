@@ -48,6 +48,9 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 5, 4), PackedInt32Arr
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wijl4"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqbix"]
+size = Vector3(49, 1, 49)
+
 [node name="Map" type="Node3D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("slider") instance=ExtResource("1_c7s6e")]
@@ -198,5 +201,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802279, 0.63758385, 4.1264
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.457591, 1.2420932, 1.3606266)
 player = NodePath("../Player")
 
+<<<<<<< Updated upstream
 [node name="Multipadaire" parent="." instance=ExtResource("10_oysan")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2689874, 12.2760515)
+=======
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88528156, 0)
+shape = SubResource("BoxShape3D_gqbix")
+
+[connection signal="body_entered" from="Area3D" to="Enemy2" method="trigger_pursuit"]
+[connection signal="body_exited" from="Area3D" to="Enemy2" method="trigger_pursuit"]
+>>>>>>> Stashed changes

@@ -3,6 +3,7 @@ extends CharacterBody3D
 @export var movement_speed: float = 4.0
 @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
+@export var canFollow : bool = false
 
 var dist_to_player = 2
 
@@ -13,8 +14,9 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
-	look_at(player.position, Vector3.UP)
-	set_movement_target(player.global_position)
+	if(canFollow):
+		look_at(player.position, Vector3.UP)
+		set_movement_target(player.global_position)
 
 
 func set_movement_target(movement_target: Vector3):
@@ -37,3 +39,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	player.hp -= 20
+	
+
+func trigger_pursuit(body: Node3D) -> void:
+	print("Lesgo")
+	if(body.name == "Player"):
+		canFollow = !canFollow
+	
