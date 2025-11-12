@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=8 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Material" uid="uid://buf2jhnfhxrsu" path="res://mapMat.tres" id="1_lpckb"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
 [ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="4_7okkn"]
 [ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://images/heart.png" id="5_84w8w"]
+[ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
 _surfaces = [{
@@ -65,3 +66,29 @@ fill_mode = 3
 nine_patch_stretch = true
 texture_under = ExtResource("4_7okkn")
 texture_progress = ExtResource("5_84w8w")
+
+[node name="Ascenseur" type="Node3D" parent="."]
+
+[node name="Bumper" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1290574, 0)
+
+[node name="Bumper8" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6875143, 0)
+
+[node name="Bumper2" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1486526, 0)
+
+[node name="Bumper3" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5795255, 0)
+
+[node name="Bumper4" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.423218, 0)
+
+[node name="Bumper5" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.423218, 0)
+
+[node name="Bumper6" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
+
+[node name="Bumper7" parent="Ascenseur" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
