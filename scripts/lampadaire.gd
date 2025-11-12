@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	player.hp -= 20
+	pass
 	
 
 func trigger_pursuit(body: Node3D) -> void:

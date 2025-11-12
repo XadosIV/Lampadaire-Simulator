@@ -7,8 +7,6 @@ var i = 1
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-var hp = 100
-
 var vertical_rotation_speed = 0.005
 var max_pitch = 1.5  # Limite supérieure de la rotation
 var min_pitch = -1.5  # Limite inférieure de la rotation
@@ -19,7 +17,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
-	slider.value = hp
+	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
