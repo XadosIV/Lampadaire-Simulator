@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwmn41vijllfd"]
+[gd_scene load_steps=5 format=3 uid="uid://b7yuq8n2k3fmj"]
 
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_pxfqq"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_ojc5p"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -88,7 +88,7 @@ _data = {
 &"fly": SubResource("Animation_rl7h7")
 }
 
-[node name="Multipadaire" type="Node3D"]
+[node name="Babypadaire" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -98,15 +98,15 @@ libraries = {
 autoplay = "fly"
 
 [node name="Root" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 
-[node name="Lampadaire" parent="Root" instance=ExtResource("1_pxfqq")]
-transform = Transform3D(1, 0, 0, 0, 0.8370413, 0.54713964, 0, -0.54713964, 0.8370413, -0.00011372566, -0.3538139, 1.3544358)
+[node name="Lampadaire" parent="Root" instance=ExtResource("1_ojc5p")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.044351667, 0.99901587, 0, -0.99901587, 0.044351667, -0.000113725655, -0.3538139, 1.3544357)
 
-[node name="Lampadaire2" parent="Root" instance=ExtResource("1_pxfqq")]
-transform = Transform3D(0.13249253, 0.43166718, -0.66038567, 0, 0.6696331, 0.43771178, 0.78895223, -0.07249193, 0.11090173, -0.00048804283, 0.8871434, 0.5921899)
+[node name="Lampadaire2" parent="Root" instance=ExtResource("1_ojc5p")]
+transform = Transform3D(0.13249251, 0.43166718, -0.66038567, 0, 0.6696331, 0.43771178, 0.7889522, -0.07249193, 0.11090173, -0.00048804277, -0.27442724, 0.5921899)
 light = false
 
-[node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
-transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, -0.07077527, 0.8871434, 0.5921899)
+[node name="Lampadaire3" parent="Root" instance=ExtResource("1_ojc5p")]
+transform = Transform3D(0.13203804, -0.43204316, 0.66023076, 0, 0.66941166, 0.4380505, -0.7890284, -0.07229921, 0.11048471, -0.07077526, -0.27442724, 0.5921899)
 light = false

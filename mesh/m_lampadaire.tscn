@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbw7dmg24bloj"]
+[gd_scene load_steps=9 format=3 uid="uid://bbw7dmg24bloj"]
+
+[ext_resource type="Script" uid="uid://cg2ykpef0jcyo" path="res://scripts/mesh_settings.gd" id="1_ww1qp"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mytxp"]
 top_radius = 0.076
@@ -33,37 +35,44 @@ material = SubResource("StandardMaterial3D_hbpct")
 size = Vector3(0.9, 0.9, 0.9)
 
 [node name="Lampadaire" type="Node3D"]
+script = ExtResource("1_ww1qp")
 
 [node name="Node3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1869562, 0)
+layers = 512
 mesh = SubResource("CylinderMesh_mytxp")
 
 [node name="Node3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08507991, 0)
+layers = 512
 mesh = SubResource("CylinderMesh_hbpct")
 skeleton = NodePath("../Node3D")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.7107997, 0)
+layers = 512
 mesh = SubResource("BoxMesh_hbpct")
 skeleton = NodePath("../Node3D")
 
 [node name="Node3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9874706, 0)
+layers = 512
 mesh = SubResource("CylinderMesh_rkx2f")
 skeleton = NodePath("../Node3D")
 
 [node name="Node3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2.4288635, 0)
+layers = 512
 mesh = SubResource("CylinderMesh_rkx2f")
 skeleton = NodePath("../Node3D")
 
 [node name="interieur" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.7107997, 0)
+layers = 512
 mesh = SubResource("BoxMesh_rkx2f")
 skeleton = NodePath("../Node3D")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7069488, 0)
 light_energy = 3.0
-shadow_enabled = true
+light_cull_mask = 4294966782
