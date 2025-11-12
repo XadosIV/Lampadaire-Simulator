@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://pruwhrngihgo"]
+
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_mwhdh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwhdh"]
+size = Vector3(1, 3.7042236, 47.976624)
+
+[node name="ArenaWall" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+
+[node name="Node3D2" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Node3D3" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="Node3D4" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Node3D5" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Node3D6" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Node3D7" parent="." instance=ExtResource("1_mwhdh")]
+
+[node name="Node3D8" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Node3D9" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Node3D10" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Node3D11" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Node3D12" parent="." instance=ExtResource("1_mwhdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3521118, 0.017669678)
+shape = SubResource("BoxShape3D_mwhdh")
