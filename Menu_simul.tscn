@@ -2,11 +2,11 @@
 
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_321jt"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="5_86hw5"]
-[ext_resource type="Script" uid="uid://coapigpmf2bvh" path="res://enemy_patrouille.gd" id="5_321jt"]
+[ext_resource type="Script" uid="uid://coapigpmf2bvh" path="res://scripts/enemy_patrouille.gd" id="5_321jt"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="6_vako5"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="7_nujyb"]
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="8_xm6jj"]
-[ext_resource type="PackedScene" uid="uid://cnbgad2ebfkcx" path="res://menu.tscn" id="9_321jt"]
+[ext_resource type="PackedScene" uid="uid://dwjrmitf6c8dr" path="res://menu.tscn" id="9_321jt"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vako5"]
 

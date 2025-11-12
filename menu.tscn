@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwjrmitf6c8dr"]
 
-[ext_resource type="Script" uid="uid://bj5dijknogkox" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Script" uid="uid://bj5dijknogkox" path="res://scripts/menu.gd" id="1_ouk20"]
 
 [sub_resource type="Gradient" id="Gradient_lti8b"]
 offsets = PackedFloat32Array(0)
@@ -68,10 +68,16 @@ theme_override_font_sizes/font_size = 41
 text = "Start
 "
 
+[node name="Creditbutton" type="Button" parent="TextureRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Crédit"
+
 [node name="Leavebutton" type="Button" parent="TextureRect2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
 text = "Exit"
 
 [connection signal="button_down" from="TextureRect2/VBoxContainer/Startbutton" to="." method="_on_startbutton_button_down"]
+[connection signal="button_down" from="TextureRect2/VBoxContainer/Creditbutton" to="." method="_on_startbutton_button_down"]
 [connection signal="button_down" from="TextureRect2/VBoxContainer/Leavebutton" to="." method="_on_leavebutton_button_down"]
