@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbw7dmg24bloj"]
+[gd_scene load_steps=8 format=3 uid="uid://bbw7dmg24bloj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_mytxp"]
 top_radius = 0.076
@@ -32,10 +32,7 @@ emission = Color(1, 1, 1, 1)
 material = SubResource("StandardMaterial3D_hbpct")
 size = Vector3(0.9, 0.9, 0.9)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mytxp"]
-size = Vector3(0.7, 3.3947096, 0.7)
-
-[node name="RigidBody3D" type="StaticBody3D"]
+[node name="Lampadaire" type="Node3D"]
 
 [node name="Node3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1869562, 0)
@@ -70,7 +67,3 @@ skeleton = NodePath("../Node3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7069488, 0)
 light_energy = 3.0
 shadow_enabled = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5170841, 0)
-shape = SubResource("BoxShape3D_mytxp")

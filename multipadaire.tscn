@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwmn41vijllfd"]
+
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="1_pxfqq"]
+
+[sub_resource type="Animation" id="Animation_rl7h7"]
+resource_name = "fly"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Lampadaire2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.57894325, -1.404414, 0), Vector3(-0.69634193, 1.3891045, -2.9326675)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/Lampadaire3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.57944936, 1.4049901, 0), Vector3(-0.63244027, -1.398726, 2.9478471)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1.9318736),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4pcrn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/Lampadaire2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.57894325, -1.404414, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Root/Lampadaire3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.57944936, 1.4049901, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Root:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4dam"]
+_data = {
+&"RESET": SubResource("Animation_4pcrn"),
+&"fly": SubResource("Animation_rl7h7")
+}
+
+[node name="Multipadaire" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_j4dam")
+}
+autoplay = "fly"
+
+[node name="Root" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+
+[node name="Lampadaire" parent="Root" instance=ExtResource("1_pxfqq")]
+transform = Transform3D(1, 0, 0, 0, 0.8370413, 0.54713964, 0, -0.54713964, 0.8370413, -0.00011372566, -0.3538139, 1.3544358)
+
+[node name="Lampadaire2" parent="Root" instance=ExtResource("1_pxfqq")]
+transform = Transform3D(0.13249253, 0.43166718, -0.66038567, 0, 0.6696331, 0.43771178, 0.78895223, -0.07249193, 0.11090173, -0.00048804283, 0.8871434, 0.5921899)
+
+[node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
+transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, -0.07077527, 0.8871434, 0.5921899)

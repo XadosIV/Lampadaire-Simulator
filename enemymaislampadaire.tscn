@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="2_4gt75"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wijl4"]
-size = Vector3(0.40899086, 2.084221, 0.33306885)
+size = Vector3(0.40899086, 1.7089806, 0.33306885)
 
 [sub_resource type="Animation" id="Animation_4gt75"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody3D:rotation")
+tracks/0/path = NodePath("Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +27,7 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("RigidBody3D:rotation")
+tracks/0/path = NodePath("Mesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -46,13 +46,11 @@ _data = {
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_p8y6p")
 
-[node name="RigidBody3D" parent="." instance=ExtResource("2_4gt75")]
+[node name="Mesh" parent="." instance=ExtResource("2_4gt75")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-collision_layer = 2
-collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012640953, 0.9103555, 0.01889038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012640953, 0.72273535, 0.01889038)
 shape = SubResource("BoxShape3D_wijl4")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cub0ryurwwwl0"]
+[gd_scene load_steps=19 format=3 uid="uid://cub0ryurwwwl0"]
 
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://player.tscn" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://arbre.tscn" id="2_e0an3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://enemymaislampadaire.tscn" id="6_iw27f"]
 [ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://heart.png" id="8_05x41"]
 [ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://heart2.png" id="9_gqbix"]
+[ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://multipadaire.tscn" id="10_oysan"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
 
@@ -196,3 +197,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802279, 0.63758385, 4.1264
 [node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_iw27f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.457591, 1.2420932, 1.3606266)
 player = NodePath("../Player")
+
+[node name="Multipadaire" parent="." instance=ExtResource("10_oysan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2689874, 12.2760515)
