@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://player.tscn" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://arbre.tscn" id="2_e0an3"]
-[ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://kaka.tres" id="2_gqbix"]
+[ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://MeshBanc.tscn" id="2_p5pve"]
 [ext_resource type="PackedScene" uid="uid://bobpiptiq6cd4" path="res://enemy.tscn" id="2_wijl4"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="4_urblq"]
