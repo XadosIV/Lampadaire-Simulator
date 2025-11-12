@@ -1,0 +1,13 @@
+[gd_resource type="Environment" format=3 uid="uid://mx1f8qha1wft"]
+
+[resource]
+background_energy_multiplier = 0.8
+ambient_light_energy = 0.0
+fog_mode = 1
+fog_light_color = Color(0.60720867, 0.63519114, 0.6908366, 1)
+fog_light_energy = 0.31
+fog_density = 1.0
+fog_depth_begin = 2.0
+fog_depth_end = 5.0
+volumetric_fog_enabled = true
+adjustment_enabled = true

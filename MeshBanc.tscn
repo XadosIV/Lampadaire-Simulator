@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqe8lh4svn0k5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k104"]
+albedo_color = Color(0.21846649, 0.123617895, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gyqm"]
+albedo_color = Color(0.50140685, 0.50140643, 0.5014065, 1)
+metallic = 1.0
+metallic_specular = 1.0
+
+[node name="Mesh" type="CSGTorus3D"]
+inner_radius = 0.001
+outer_radius = 0.001
+
+[node name="Sol" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023337841, -0.3059306, 0.17979431)
+size = Vector3(2.631485, 0.22052002, 1.0756226)
+material = SubResource("StandardMaterial3D_7k104")
+
+[node name="PiedFG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3109355, -0.49370933, -0.2801485)
+size = Vector3(0.056289673, 0.22198486, 0.05266571)
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="PiedFD" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1907334, -0.49370933, -0.2801485)
+size = Vector3(0.056289673, 0.22198486, 0.05266571)
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="dossier" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026082516, -0.047538996, 0.5573425)
+size = Vector3(2.6228828, 0.68774414, 0.32052612)
+material = SubResource("StandardMaterial3D_7k104")
+
+[node name="AccD" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2187843, -0.059150934, -0.2918005)
+radius = 0.04
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccD2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2912958, -0.059150934, -0.2918005)
+radius = 0.04
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccD3" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018646717, -0.059150934, -0.2918005)
+radius = 0.04
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="PiedBG" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3109355, -0.49370933, 0.6530614)
+size = Vector3(0.056289673, 0.22198486, 0.05266571)
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="PiedBD" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1907334, -0.49370933, 0.6530614)
+size = Vector3(0.056289673, 0.22198486, 0.05266571)
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccBD" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2231975, -0.14607286, -0.29916)
+radius = 0.03
+height = 0.16564941
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccHD" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2231975, -0.04803264, 0.06911552)
+radius = 0.03
+height = 0.7214966
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccBG" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2868826, -0.14607286, -0.29916)
+radius = 0.03
+height = 0.16564941
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccHG" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.2868826, -0.04803264, 0.06911552)
+radius = 0.03
+height = 0.7214966
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccBM" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014233589, -0.14607286, -0.29916)
+radius = 0.03
+height = 0.16564941
+material = SubResource("StandardMaterial3D_4gyqm")
+
+[node name="AccHM" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.014233589, -0.04803264, 0.06911552)
+radius = 0.03
+height = 0.7214966
+material = SubResource("StandardMaterial3D_4gyqm")

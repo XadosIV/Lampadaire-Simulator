@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbw7dmg24bloj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mytxp"]
+top_radius = 0.076
+bottom_radius = 0.076
+height = 2.475
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hbpct"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mytxp"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0.39215687)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hbpct"]
+material = SubResource("StandardMaterial3D_mytxp")
+size = Vector3(1.2, 1.2, 1.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rkx2f"]
+top_radius = 0.2
+bottom_radius = 0.4
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbpct"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rkx2f"]
+material = SubResource("StandardMaterial3D_hbpct")
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mytxp"]
+size = Vector3(0.7, 3.3947096, 0.7)
+
+[node name="RigidBody3D" type="StaticBody3D"]
+
+[node name="Node3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1869562, 0)
+mesh = SubResource("CylinderMesh_mytxp")
+
+[node name="Node3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08507991, 0)
+mesh = SubResource("CylinderMesh_hbpct")
+skeleton = NodePath("../Node3D")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.7107997, 0)
+mesh = SubResource("BoxMesh_hbpct")
+skeleton = NodePath("../Node3D")
+
+[node name="Node3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9874706, 0)
+mesh = SubResource("CylinderMesh_rkx2f")
+skeleton = NodePath("../Node3D")
+
+[node name="Node3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 2.4288635, 0)
+mesh = SubResource("CylinderMesh_rkx2f")
+skeleton = NodePath("../Node3D")
+
+[node name="interieur" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 2.7107997, 0)
+mesh = SubResource("BoxMesh_rkx2f")
+skeleton = NodePath("../Node3D")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7069488, 0)
+light_energy = 3.0
+shadow_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5170841, 0)
+shape = SubResource("BoxShape3D_mytxp")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://p6wyn34hu8ij"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq860"]
+albedo_color = Color(0.51946, 0.2540386, 4.813075e-08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gablb"]
+albedo_color = Color(0.82, 0.82, 0.82, 1)
+
+[node name="Arbre" type="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32861328, 0)
+radius = 0.32
+height = 2.852
+material = SubResource("StandardMaterial3D_xq860")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1670356, 0)
+radius = 1.145
+radial_segments = 20
+rings = 12
+material = SubResource("StandardMaterial3D_gablb")

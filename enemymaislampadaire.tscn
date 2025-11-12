@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmoc2x7rlkrwg"]
+
+[ext_resource type="Script" uid="uid://4xocmtfq4n0t" path="res://enemymaislampadaire.gd" id="1_p8y6p"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="2_4gt75"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wijl4"]
+size = Vector3(0.40899086, 2.084221, 0.33306885)
+
+[sub_resource type="Animation" id="Animation_4gt75"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p8y6p"]
+resource_name = "bonk"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333, 0.29976028, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-1.5707964, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aw63u"]
+_data = {
+&"RESET": SubResource("Animation_4gt75"),
+&"bonk": SubResource("Animation_p8y6p")
+}
+
+[node name="Enemy" type="CharacterBody3D"]
+script = ExtResource("1_p8y6p")
+
+[node name="RigidBody3D" parent="." instance=ExtResource("2_4gt75")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012640953, 0.9103555, 0.01889038)
+shape = SubResource("BoxShape3D_wijl4")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86881316, 0.6547485)
+aabb = AABB(-0.1958832, -1.0925272, -0.8477174, 0.3917664, 2.1850543, 0.36071742)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_aw63u")
+}
+
+[connection signal="animation_changed" from="AnimationPlayer" to="." method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
