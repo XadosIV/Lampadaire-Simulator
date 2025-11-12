@@ -42,7 +42,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	
 
 func trigger_pursuit(body: Node3D) -> void:
-	print("Lesgo")
 	if(body.name == "Player"):
 		canFollow = !canFollow
 	
