@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmoc2x7rlkrwg"]
 
-[ext_resource type="Script" uid="uid://4xocmtfq4n0t" path="res://enemymaislampadaire.gd" id="1_p8y6p"]
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="2_4gt75"]
+[ext_resource type="Script" uid="uid://4xocmtfq4n0t" path="res://scripts/lampadaire.gd" id="1_p8y6p"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_4gt75"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wijl4"]
 size = Vector3(0.40899086, 1.7089806, 0.33306885)

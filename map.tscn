@@ -1,15 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://cub0ryurwwwl0"]
 
-[ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://player.tscn" id="1_c7s6e"]
-[ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://arbre.tscn" id="2_e0an3"]
+[ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c7s6e"]
+[ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="2_e0an3"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
-[ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://MeshBanc.tscn" id="2_p5pve"]
-[ext_resource type="PackedScene" uid="uid://bobpiptiq6cd4" path="res://enemy.tscn" id="2_wijl4"]
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://lampadaire.tscn" id="4_urblq"]
-[ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://enemymaislampadaire.tscn" id="6_iw27f"]
-[ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://heart.png" id="8_05x41"]
-[ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://heart2.png" id="9_gqbix"]
-[ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://multipadaire.tscn" id="10_oysan"]
+[ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_p5pve"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_urblq"]
+[ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="6_iw27f"]
+[ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://images/heart.png" id="8_05x41"]
+[ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="9_gqbix"]
+[ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="10_oysan"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
 
@@ -68,11 +67,6 @@ environment = ExtResource("2_gqbix")
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
 shape = 4
 material = SubResource("FogMaterial_sb2pt")
-
-[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_wijl4")]
-transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -6.691057, 1.0880284, 21.311165)
-visible = false
-player = NodePath("../Player")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3807774, 0)
@@ -200,7 +194,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802279, 0.63758385, 4.1264
 [node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_iw27f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.457591, 1.2420932, 1.3606266)
 player = NodePath("../Player")
-
 
 [node name="Multipadaire" parent="." instance=ExtResource("10_oysan")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2689874, 12.2760515)
