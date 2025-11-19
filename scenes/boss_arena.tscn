@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://bdxjvd45jdi71"]
 
-[ext_resource type="Material" uid="uid://buf2jhnfhxrsu" path="res://mapMat.tres" id="1_lpckb"]
+[ext_resource type="Material" path="res://mapMat.tres" id="1_lpckb"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
 [ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="4_7okkn"]
@@ -27,7 +27,6 @@ use_collision = true
 [node name="Floor" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65205, 0)
 size = Vector3(47.83374, 1, 47.990967)
-material = ExtResource("1_lpckb")
 
 [node name="ArenaWall" parent="CSGCombiner3D" instance=ExtResource("2_5gcvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -1)
