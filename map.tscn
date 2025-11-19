@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cub0ryurwwwl0"]
+[gd_scene load_steps=25 format=3 uid="uid://cub0ryurwwwl0"]
 
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="2_e0an3"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_p5pve"]
-[ext_resource type="Script" uid="uid://28y64irdje7d" path="res://scripts/fog_volume.gd" id="3_6qsgm"]
+[ext_resource type="Script" path="res://scripts/fog_volume.gd" id="3_6qsgm"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_urblq"]
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="6_iw27f"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="9_gqbix"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="10_oysan"]
 [ext_resource type="PackedScene" uid="uid://b7yuq8n2k3fmj" path="res://mesh/m_petipadaire.tscn" id="10_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://bdxjvd45jdi71" path="res://scenes/boss_arena.tscn" id="11_sb2pt"]
-[ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="12_0t07s"]
+[ext_resource type="Script" path="res://scripts/boss_arena.gd" id="12_0t07s"]
+[ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="14_ooc2g"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
 
@@ -58,8 +59,9 @@ size = Vector3(49, 1, 49)
 
 [node name="Map" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_c7s6e")]
+[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("1_c7s6e")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
+menu_pause = NodePath("../MenuPause")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.6220365, 0, 3.9674017, 0)
@@ -305,6 +307,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.
 [node name="BossArena" parent="." instance=ExtResource("11_sb2pt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 60.514)
 script = ExtResource("12_0t07s")
+
+[node name="MenuPause" parent="." instance=ExtResource("14_ooc2g")]
+visible = false
 
 [connection signal="body_entered" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
 [connection signal="body_exited" from="Area3D" to="Lampadaire" method="trigger_pursuit"]

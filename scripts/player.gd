@@ -20,6 +20,7 @@ func _ready():
 func _process(delta):
 	pass
 
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -47,7 +48,7 @@ var camera_anglev=0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		menu_pause.visible = true
+		menu_pause.visible = true	
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			
