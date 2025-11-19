@@ -13,13 +13,10 @@ var min_pitch = -1.5  # Limite inférieure de la rotation
 
 @export var slider : TextureProgressBar
 @export var menu_pause : Control
+@export var boss_hp_ui: BossHp
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-func _process(delta):
-	pass
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
