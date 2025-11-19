@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_mwhdh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwhdh"]
-size = Vector3(1, 3.7042236, 47.976624)
+size = Vector3(1, 102.961945, 47.976624)
 
 [node name="ArenaWall" type="Node3D"]
 
@@ -42,5 +42,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
 [node name="Wall" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3521118, 0.017669678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.980972, 0.017669678)
 shape = SubResource("BoxShape3D_mwhdh")
