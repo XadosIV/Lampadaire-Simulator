@@ -232,6 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802279, 0.63758385, 4.1264
 
 [node name="Lampadaire" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_iw27f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6095529, 0.5799664, 1.3606266)
+visible = false
 player = NodePath("../Player")
 
 [node name="Multipadaire" parent="." instance=ExtResource("10_oysan")]
@@ -244,7 +245,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88528156, 0)
 shape = SubResource("BoxShape3D_gqbix")
 
 [node name="Petipadaire" parent="." instance=ExtResource("10_sb2pt")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 1.4440647, 5.887939)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -14.176871, 1.4440647, 16.069878)
 
 [node name="Bumpers" type="Node3D" parent="."]
 
