@@ -55,7 +55,7 @@ shape = SubResource("BoxShape3D_wijl4")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86881316, 0.6547485)
-aabb = AABB(-0.1958832, -1.0925272, -0.8477174, 0.3917664, 2.1850543, 0.36071742)
+aabb = AABB(-0.1958832, -0.7187472, -0.8477174, 0.3917664, 1.4374944, 0.36071742)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
