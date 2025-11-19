@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=9 format=4 uid="uid://bdxjvd45jdi71"]
 
-[ext_resource type="Material" uid="uid://buf2jhnfhxrsu" path="res://mapMat.tres" id="1_lpckb"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
 [ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="4_7okkn"]
 [ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://images/heart.png" id="5_84w8w"]
+[ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
@@ -12,12 +12,13 @@ _surfaces = [{
 "aabb": AABB(-23.91687, -1.15205, -23.995483, 47.83374, 1, 47.990967),
 "attribute_data": PackedByteArray("AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
 "format": 34359738391,
-"material": ExtResource("1_lpckb"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 36,
 "vertex_data": PackedByteArray("wFW/wWB2k7/A9r9BwFW/wWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/QWB2k7/A9r/BwFW/wWB2k7/A9r/BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r/BwFW/QWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r9BwFW/wWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/wQCzG77A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QWB2k7/A9r9BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r/BwFW/QQCzG77A9r/BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r/BwFW/QWB2k7/A9r/BAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_84w8w"]
 
 [node name="BossArena" type="Node3D"]
 
@@ -27,7 +28,6 @@ use_collision = true
 [node name="Floor" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65205, 0)
 size = Vector3(47.83374, 1, 47.990967)
-material = ExtResource("1_lpckb")
 
 [node name="ArenaWall" parent="CSGCombiner3D" instance=ExtResource("2_5gcvm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -1)
@@ -49,9 +49,10 @@ transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.622
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Player" parent="." node_paths=PackedStringArray("slider") instance=ExtResource("3_n4yxd")]
+[node name="Player" parent="." node_paths=PackedStringArray("slider", "menu_pause") instance=ExtResource("3_n4yxd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
 slider = NodePath("../CanvasLayer/TextureProgressBar")
+menu_pause = NodePath("../MenuPause")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -92,3 +93,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
 
 [node name="Bumper7" parent="Ascenseur" instance=ExtResource("6_84w8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
+
+[node name="Canons" type="Node3D" parent="."]
+
+[node name="CanonTrigger" type="Area3D" parent="Canons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.959496, 12.28603, -15.903155)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Canons/CanonTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
+shape = SubResource("BoxShape3D_84w8w")
+
+[node name="Bumper" parent="Canons" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.959, 1, -15.903)
+strength = 20.0
+
+[node name="CanonTrigger2" type="Area3D" parent="Canons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.12848, 12.28603, -16.082504)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Canons/CanonTrigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
+shape = SubResource("BoxShape3D_84w8w")
+
+[node name="Bumper2" parent="Canons" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.128, 1, -16.083)
+strength = 20.0
+
+[node name="CanonTrigger3" type="Area3D" parent="Canons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.206665, 12.28603, 15.973497)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Canons/CanonTrigger3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
+shape = SubResource("BoxShape3D_84w8w")
+
+[node name="Bumper3" parent="Canons" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.207, 1, 15.973)
+strength = 20.0
+
+[node name="CanonTrigger4" type="Area3D" parent="Canons"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.323273, 12.28603, 15.8569)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Canons/CanonTrigger4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
+shape = SubResource("BoxShape3D_84w8w")
+
+[node name="Bumper4" parent="Canons" instance=ExtResource("6_84w8w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.323, 1, 15.857)
+strength = 20.0
+
+[node name="MenuPause" parent="." instance=ExtResource("6_6wr5o")]
+visible = false
