@@ -268,10 +268,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.423218, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
 strength = 30.0
 
-[node name="Area3D" type="Area3D" parent="Ascenseur"]
+[node name="MapChangeTrigger" type="Area3D" parent="Ascenseur"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.28603, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ascenseur/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ascenseur/MapChangeTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
 shape = SubResource("BoxShape3D_0t07s")
 
@@ -308,5 +308,5 @@ script = ExtResource("12_0t07s")
 
 [connection signal="body_entered" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
 [connection signal="body_exited" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
-[connection signal="body_entered" from="Ascenseur/Area3D" to="BossArena" method="move_to_center" unbinds=1]
+[connection signal="body_entered" from="Ascenseur/MapChangeTrigger" to="BossArena" method="move_to_center" unbinds=1]
 [connection signal="defog" from="BossArena" to="WorldEnvironment/FogVolume" method="defog"]
