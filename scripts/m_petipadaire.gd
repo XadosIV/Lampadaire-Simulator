@@ -16,6 +16,8 @@ var preparing := false
 @export var overcharge_speed := 20.0   # vitesse très rapide
 var prepare_timer := 0.0
 var charge_target: Vector3
+var charge_max_time = 1
+var charge_max_timer = 1
 
 var last_charge_distance
 
@@ -52,8 +54,10 @@ func _patrol(_delta):
 
 func _attack_player(delta):
 	if preparing:
+		charge_max_timer = charge_max_time
 		# L’ennemi regarde le joueur et attend
 		look_at(player.global_transform.origin, Vector3.UP)
+		
 		prepare_timer -= delta
 		velocity = Vector3.ZERO
 
@@ -70,6 +74,7 @@ func _attack_player(delta):
 		return
 
 	if charging:
+		charge_max_timer -= delta
 		# Charge très rapide vers le point derrière le joueur
 		look_at(charge_target, Vector3.UP)
 		var dir = (charge_target - global_transform.origin).normalized()
@@ -82,10 +87,21 @@ func _attack_player(delta):
 		
 		var charge_distance = global_transform.origin.distance_to(charge_target)
 		# Quand il a dépassé la cible, on arrête la charge
-		if charge_distance < 2.0 or last_charge_distance == charge_distance:
+		if charge_distance < 1.0 or last_charge_distance == charge_distance or charge_max_timer < 0:
+			var bodies = area.get_overlapping_bodies()
+			charge_max_timer = charge_max_time
 			charging = false
-			player = null
-		
+			if bodies.has(player):
+				charging = false
+				preparing = true
+				var to_player = player.global_transform.origin - global_transform.origin
+				to_player = to_player.normalized()
+				charge_target = player.global_transform.origin + to_player * 10.0
+				prepare_timer = randf_range(prepare_time_min, prepare_time_max)
+				velocity = Vector3.ZERO
+			else:
+				player = null
+
 		last_charge_distance = charge_distance
 		return
 
@@ -109,4 +125,4 @@ func _on_charge_collision(collision):
 	if body and body.name == "Player":
 		var push_dir = (body.global_transform.origin - global_transform.origin).normalized()
 		if body.has_method("apply_bump"):
-			body.apply_bump(push_dir * 20.0)   # intensité
+			body.apply_bump(push_dir * 50.0)   # intensité
