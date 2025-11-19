@@ -12,6 +12,7 @@ var max_pitch = 1.5  # Limite supérieure de la rotation
 var min_pitch = -1.5  # Limite inférieure de la rotation
 
 @export var slider : TextureProgressBar
+@export var menu_pause : Control
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -46,7 +47,10 @@ var camera_anglev=0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
+		menu_pause.visible = true
+		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 			if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
