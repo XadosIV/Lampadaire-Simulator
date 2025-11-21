@@ -1,5 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://cub0ryurwwwl0"]
 
+[ext_resource type="Script" uid="uid://gu0s3silasc3" path="res://scripts/Manager.gd" id="1_2wwcf"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c7s6e"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="2_e0an3"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
@@ -12,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="10_oysan"]
 [ext_resource type="PackedScene" uid="uid://b7yuq8n2k3fmj" path="res://mesh/m_petipadaire.tscn" id="10_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://bdxjvd45jdi71" path="res://scenes/boss_arena.tscn" id="11_sb2pt"]
-[ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="12_0t07s"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="14_ooc2g"]
 [ext_resource type="PackedScene" uid="uid://bfros5qrhr555" path="res://scenes/boss_hp.tscn" id="15_2wwcf"]
 
@@ -59,6 +59,7 @@ size = Vector3(49, 1, 49)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0t07s"]
 
 [node name="Map" type="Node3D"]
+script = ExtResource("1_2wwcf")
 
 [node name="Player" parent="." node_paths=PackedStringArray("menu_pause", "boss_hp_ui") instance=ExtResource("1_c7s6e")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
@@ -198,6 +199,21 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, -0.99999994, 1, -4.371139e-
 [node name="Mesh35" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
 transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 8.445154, -4.8438735)
 
+[node name="Mesh36" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
+transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 9.640295, -2.5480132)
+
+[node name="Mesh37" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
+transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 10.85463, -0.22101843)
+
+[node name="Mesh38" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
+transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 12.054203, 2.0868616)
+
+[node name="Mesh39" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
+transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 13.249344, 4.382722)
+
+[node name="Mesh40" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
+transform = Transform3D(0, -1, 0, -0.4628474, 0, 0.8864379, -0.88643795, 0, -0.46284738, 4.508691, 14.463679, 6.709717)
+
 [node name="Floor" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D"]
 size = Vector3(50, 1, 50)
 material = SubResource("StandardMaterial3D_05x41")
@@ -322,6 +338,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.661737, 5.7491026, 7.41752
 
 [node name="Bumper3" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.589877, 7.286971, 5.847788)
+strength = 20.0
 
 [node name="Bumper4" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.927822, 3.5329442, -3.4226885)
@@ -331,11 +348,23 @@ strength = 27.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.533598, 6.1832924, -6.720951)
 strength = 9.0
 
+[node name="Bumper6" parent="Bumpers" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.626064, 15.7002735, 8.396156)
+strength = 15.0
+
+[node name="Bumper7" parent="Bumpers" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.986, 25, 11.657)
+strength = 15.0
+
+[node name="Bumper8" parent="Bumpers" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.958, 35, 11.657)
+strength = 15.0
+
 [node name="Bumper2" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.008809, 1.6801004, 5.8058205)
 
 [node name="Ascenseur" type="Node3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.97775006, 40.38768, 6.506609)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14.295, 45, 10.243)
 
 [node name="Bumper" parent="Ascenseur" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1290574, 0)
@@ -395,7 +424,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.
 
 [node name="BossArena" parent="." instance=ExtResource("11_sb2pt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 60.514)
-script = ExtResource("12_0t07s")
 
 [node name="MenuPause" parent="." instance=ExtResource("14_ooc2g")]
 visible = false
@@ -405,4 +433,5 @@ visible = false
 [connection signal="body_entered" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
 [connection signal="body_exited" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
 [connection signal="body_entered" from="Ascenseur/MapChangeTrigger" to="BossArena" method="move_to_center" unbinds=1]
+[connection signal="defog" from="BossArena" to="." method="RemoveBumpers"]
 [connection signal="defog" from="BossArena" to="WorldEnvironment/FogVolume" method="defog"]

@@ -10,6 +10,8 @@ const JUMP_VELOCITY = 4.5
 var vertical_rotation_speed = 0.005
 var max_pitch = 1.5  # Limite supérieure de la rotation
 var min_pitch = -1.5  # Limite inférieure de la rotation
+var pushed = false
+var pushleft = 0
 
 @export var slider : TextureProgressBar
 @export var menu_pause : Control
@@ -33,8 +35,13 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		if(pushed):
+			pushleft -= delta
+			if (pushleft <=0):
+				pushed = false
+		else:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -69,6 +76,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Camera3D.rotation.x = camera_anglev
 
 func apply_bump(force: Vector3):
+	pushed = true
+	pushleft = force.length()/100
+	print(pushleft)
 	# Force max pour éviter les éjections trop fortes
 	var max_force = 100.0
 	if force.length() > max_force:

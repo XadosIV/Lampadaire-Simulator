@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://pruwhrngihgo"]
+[gd_scene load_steps=4 format=3 uid="uid://pruwhrngihgo"]
 
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_mwhdh"]
+[ext_resource type="Script" uid="uid://c8bo5463302a4" path="res://scripts/arena_wall.gd" id="1_o87et"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwhdh"]
 size = Vector3(1, 102.961945, 47.976624)
 
 [node name="ArenaWall" type="Node3D"]
+script = ExtResource("1_o87et")
 
 [node name="Node3D" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)

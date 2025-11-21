@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=10 format=4 uid="uid://bdxjvd45jdi71"]
 
+[ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
 [ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="4_7okkn"]
@@ -21,6 +22,7 @@ _surfaces = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_84w8w"]
 
 [node name="BossArena" type="Node3D"]
+script = ExtResource("1_6wr5o")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -142,3 +144,5 @@ strength = 20.0
 
 [node name="MenuPause" parent="." instance=ExtResource("6_6wr5o")]
 visible = false
+
+[connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]

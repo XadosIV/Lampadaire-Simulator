@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7yuq8n2k3fmj"]
+[gd_scene load_steps=9 format=3 uid="uid://b7yuq8n2k3fmj"]
 
 [ext_resource type="Script" uid="uid://cpfsv55qd3ct6" path="res://scripts/m_petipadaire.gd" id="1_5c0l7"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_ojc5p"]
@@ -96,6 +96,8 @@ radius = 5.0
 radius = 0.18652344
 height = 1.1308594
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5c0l7"]
+
 [node name="Petipadaire" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_5c0l7")
@@ -129,3 +131,11 @@ shape = SubResource("SphereShape3D_fn5ne")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371097e-08, -0.99999297, 0, 0.99999297, -4.371097e-08, 0, -0.09021359, -0.0087887)
 shape = SubResource("CapsuleShape3D_cpo3o")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("CapsuleShape3D_5c0l7")
+
+[connection signal="body_entered" from="Area3D2" to="." method="_on_passiveCollision"]

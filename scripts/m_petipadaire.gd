@@ -125,4 +125,10 @@ func _on_charge_collision(collision):
 	if body and body.name == "Player":
 		var push_dir = (body.global_transform.origin - global_transform.origin).normalized()
 		if body.has_method("apply_bump"):
-			body.apply_bump(push_dir * 50.0)   # intensité
+			body.apply_bump(push_dir * 30.0)   # intensité
+			
+func _on_passiveCollision(body):
+	if body.name == "Player":
+		var push_dir = (body.global_transform.origin - global_transform.origin).normalized()
+		if body.has_method("apply_bump"):
+			body.apply_bump(push_dir * 15.0)
