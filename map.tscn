@@ -328,9 +328,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2689874, 12.2760515)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88528156, 0)
 shape = SubResource("BoxShape3D_gqbix")
 
-[node name="Petipadaire" parent="." instance=ExtResource("10_sb2pt")]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -14.176871, 1.4440647, 16.069878)
-
 [node name="Bumpers" type="Node3D" parent="."]
 
 [node name="Bumper" parent="Bumpers" instance=ExtResource("9_gqbix")]
@@ -338,7 +335,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.661737, 5.7491026, 7.41752
 
 [node name="Bumper3" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.589877, 7.286971, 5.847788)
-strength = 20.0
 
 [node name="Bumper4" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.927822, 3.5329442, -3.4226885)
@@ -429,6 +425,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 60.514)
 visible = false
 
 [node name="BossHp" parent="." instance=ExtResource("15_2wwcf")]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Petipadaire" parent="Enemies" instance=ExtResource("10_sb2pt")]
+transform = Transform3D(0.10187239, 0, -0.9947974, 0, 0.9999999, 0, 0.9947974, 0, 0.10187238, -2.8956833, 9.1326885, 5.542124)
+patrol_distance = 20.0
+
+[node name="Petipadaire2" parent="Enemies" instance=ExtResource("10_sb2pt")]
+transform = Transform3D(0.015955666, -0.9876582, -0.1558092, 0.100615114, 0.15662403, -0.9825199, 0.9947974, 0, 0.10187238, -6.7671795, 5.2426224, -0.2894206)
+patrol_distance = 20.0
+
+[node name="Petipadaire3" parent="Enemies" instance=ExtResource("10_sb2pt")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 0.9999998, 0, -0.99999994, 0, -4.3711385e-08, -8.883438, 36.240982, -5.992955)
+patrol_distance = 10.0
+
+[node name="Petipadaire4" parent="Enemies" instance=ExtResource("10_sb2pt")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.92595613, 0.37763068, 0, -0.37763065, 0.92595625, 4.78214, 16.488806, 7.8417597)
+patrol_distance = 10.0
 
 [connection signal="body_entered" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
 [connection signal="body_exited" from="Area3D" to="Lampadaire" method="trigger_pursuit"]
