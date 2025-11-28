@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://c8pi17pc8ap0t"]
+[gd_scene load_steps=19 format=3 uid="uid://c8pi17pc8ap0t"]
 
+[ext_resource type="Script" uid="uid://d3rdpjgbhlwbu" path="res://scripts/menu_simul.gd" id="1_28il5"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="1_ayq4i"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_l3n5n"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="3_28il5"]
@@ -50,6 +51,7 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 5, 4), PackedInt32Arr
 size = Vector3(49, 1, 49)
 
 [node name="Menu_simul" type="Node3D"]
+script = ExtResource("1_28il5")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.757196, 1.1390896, 8.086766)

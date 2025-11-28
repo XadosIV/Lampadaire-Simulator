@@ -348,6 +348,10 @@ strength = 9.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.626064, 15.7002735, 8.396156)
 strength = 15.0
 
+[node name="Bumper9" parent="Bumpers" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.626064, 8.529383, 8.396156)
+strength = 15.0
+
 [node name="Bumper7" parent="Bumpers" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.986, 25, 11.657)
 strength = 15.0
@@ -419,7 +423,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -29.
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -24.01263, 0, 23.381231)
 
 [node name="BossArena" parent="." instance=ExtResource("11_sb2pt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 60.514)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, 60.514)
 
 [node name="MenuPause" parent="." instance=ExtResource("14_ooc2g")]
 visible = false
@@ -433,8 +437,10 @@ transform = Transform3D(0.10187239, 0, -0.9947974, 0, 0.9999999, 0, 0.9947974, 0
 patrol_distance = 20.0
 
 [node name="Petipadaire2" parent="Enemies" instance=ExtResource("10_sb2pt")]
-transform = Transform3D(0.015955666, -0.9876582, -0.1558092, 0.100615114, 0.15662403, -0.9825199, 0.9947974, 0, 0.10187238, -6.7671795, 5.2426224, -0.2894206)
+transform = Transform3D(0.015955666, -0.9876582, -0.1558092, 0.100615114, 0.15662403, -0.9825199, 0.9947974, 0, 0.10187238, -9.155259, 5.6362395, -0.2894206)
 patrol_distance = 20.0
+prepare_time_min = 0.1
+prepare_time_max = 0.5
 
 [node name="Petipadaire3" parent="Enemies" instance=ExtResource("10_sb2pt")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 0.9999998, 0, -0.99999994, 0, -4.3711385e-08, -8.883438, 36.240982, -5.992955)
