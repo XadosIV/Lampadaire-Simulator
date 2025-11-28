@@ -6,4 +6,4 @@ extends Node3D
 func bounce(body: Node3D):
 	if body.name == "Player":
 		anim_player.play("BUMP")
-		
+		body.velocity.y = max(strength,body.velocity.y)
