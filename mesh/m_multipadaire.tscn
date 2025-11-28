@@ -113,7 +113,7 @@ transform = Transform3D(0.13249253, 0.4316672, -0.66038567, 0, 0.66963315, 0.437
 light = false
 
 [node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
-transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, -0.07077527, 0.8871434, 0.5921899)
+transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, 0, 0.887, 0.592)
 light = false
 
 [node name="Canonpadaire" parent="." instance=ExtResource("2_1brw4")]
