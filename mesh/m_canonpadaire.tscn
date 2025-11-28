@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd7ld6vqk12dq"]
+[gd_scene load_steps=8 format=3 uid="uid://dd7ld6vqk12dq"]
 
+[ext_resource type="Script" uid="uid://b3b0i41eid7tf" path="res://scripts/m_canonpadaire.gd" id="1_rt8xm"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_5ygvq"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
@@ -399,6 +400,7 @@ height = 0.5162964
 
 [node name="Canonpadaire" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_rt8xm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -407,7 +409,7 @@ libraries = {
 autoplay = "fly"
 
 [node name="Root" type="Node3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.29999995, 0, 0, 0, 0.29999995, 0, 0, 0)
 
 [node name="Canon" parent="Root" instance=ExtResource("2_5ygvq")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, -0.75, 0, 0)
@@ -461,11 +463,15 @@ transform = Transform3D(0.13203804, -0.43204316, 0.66023076, 0, 0.66941166, 0.43
 light = false
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.034238815, -0.10572492, 0.29684946)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999994, 0, 0, 0, 0.999994, 0, -0.6733073, -0.26608685)
 shape = SubResource("CylinderShape3D_rt8xm")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9999939, 0, 0, 0, 0.9999939, 0, -0.67330724, -0.26608682)
+transform = Transform3D(1, 0, 0, 0, 0.9999938, 0, 0, 0, 0.9999938, -0.034238815, -0.77903205, 0.0307627)
 shape = SubResource("CylinderShape3D_rt8xm")
+disabled = true
+
+[connection signal="body_entered" from="Area3D" to="." method="shooting"]

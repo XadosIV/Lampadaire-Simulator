@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfros5qrhr555"]
 
 [ext_resource type="Texture2D" uid="uid://d6n3wncoxmf" path="res://images/Barre_hp.png" id="1_bxalq"]
-[ext_resource type="Script" uid="uid://bq4c0qeyrmfr7" path="res://scenes/boss_hp.gd" id="1_qvx8b"]
+[ext_resource type="Script" uid="uid://bq4c0qeyrmfr7" path="res://scripts/boss_hp.gd" id="1_qvx8b"]
 [ext_resource type="Texture2D" uid="uid://dvwjgbvh5i2kg" path="res://images/Hp_point.png" id="2_qvx8b"]
 
 [node name="BossHp" type="Control" node_paths=PackedStringArray("tete", "debut", "fin")]

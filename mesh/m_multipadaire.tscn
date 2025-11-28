@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwmn41vijllfd"]
+[gd_scene load_steps=7 format=3 uid="uid://dwmn41vijllfd"]
 
+[ext_resource type="Script" uid="uid://bl1j0p16r6662" path="res://scripts/boss.gd" id="1_n6xsv"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_pxfqq"]
+[ext_resource type="PackedScene" uid="uid://bfros5qrhr555" path="res://scenes/boss_hp.tscn" id="2_1brw4"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -90,6 +92,7 @@ _data = {
 
 [node name="Multipadaire" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_n6xsv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -110,3 +113,5 @@ light = false
 [node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
 transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, -0.07077527, 0.8871434, 0.5921899)
 light = false
+
+[node name="BossHp" parent="." instance=ExtResource("2_1brw4")]

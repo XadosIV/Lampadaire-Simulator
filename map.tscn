@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cub0ryurwwwl0"]
+[gd_scene load_steps=23 format=3 uid="uid://cub0ryurwwwl0"]
 
 [ext_resource type="Script" uid="uid://gu0s3silasc3" path="res://scripts/Manager.gd" id="1_2wwcf"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c7s6e"]
@@ -9,11 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="6_iw27f"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="9_gqbix"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="10_0t07s"]
-[ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="10_oysan"]
 [ext_resource type="PackedScene" uid="uid://b7yuq8n2k3fmj" path="res://mesh/m_petipadaire.tscn" id="10_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://bdxjvd45jdi71" path="res://scenes/boss_arena.tscn" id="11_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="14_ooc2g"]
-[ext_resource type="PackedScene" uid="uid://bfros5qrhr555" path="res://scenes/boss_hp.tscn" id="15_2wwcf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
 
@@ -63,7 +61,7 @@ script = ExtResource("1_2wwcf")
 [node name="Player" parent="." node_paths=PackedStringArray("menu_pause", "boss_hp_ui") instance=ExtResource("1_c7s6e")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
 menu_pause = NodePath("../MenuPause")
-boss_hp_ui = NodePath("../BossHp")
+boss_hp_ui = NodePath("")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.6220365, 0, 3.9674017, 0)
@@ -315,9 +313,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.124871, 1.8211002, 19.7844
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6095529, 0.5799664, 37.8214)
 player = NodePath("../Player")
 
-[node name="Multipadaire" parent="." instance=ExtResource("10_oysan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2689874, 12.2760515)
-
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="TriggerMap" type="CollisionShape3D" parent="Area3D"]
@@ -416,8 +411,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, 60.514)
 
 [node name="MenuPause" parent="." instance=ExtResource("14_ooc2g")]
 visible = false
-
-[node name="BossHp" parent="." instance=ExtResource("15_2wwcf")]
 
 [node name="Enemies" type="Node3D" parent="."]
 
