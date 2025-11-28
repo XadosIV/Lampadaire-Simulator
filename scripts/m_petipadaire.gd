@@ -56,7 +56,7 @@ func _attack_player(delta):
 	if preparing:
 		charge_max_timer = charge_max_time
 		# L’ennemi regarde le joueur et attend
-		look_at(player.global_transform.origin, Vector3.UP)
+		look_at(charge_target, Vector3.UP)
 		
 		prepare_timer -= delta
 		velocity = Vector3.ZERO
@@ -65,12 +65,6 @@ func _attack_player(delta):
 		if prepare_timer <= 0:
 			preparing = false
 			charging = true
-
-			var to_player = player.global_transform.origin - global_transform.origin
-			to_player = to_player.normalized()
-
-			# Point situé derrière le joueur (il le traverse)
-			charge_target = player.global_transform.origin + to_player * 10.0
 		return
 
 	if charging:
@@ -112,6 +106,11 @@ func _on_body_entered(body):
 		preparing = true
 		prepare_timer = randf_range(prepare_time_min, prepare_time_max)
 		velocity = Vector3.ZERO
+		var to_player = player.global_transform.origin - global_transform.origin
+		to_player = to_player.normalized()
+
+		# Point situé derrière le joueur (il le traverse)
+		charge_target = player.global_transform.origin + to_player * 10.0
 
 func _on_body_exited(body):
 	if body == player:
