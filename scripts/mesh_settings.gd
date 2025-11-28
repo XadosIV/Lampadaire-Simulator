@@ -20,12 +20,21 @@ func _ready() -> void:
 	if jaune:
 		var mat := StandardMaterial3D.new()
 		mat.albedo_color = Color(1, 1, 0)
+		print("yup")
 
 		for child in get_children():
 			if child is not OmniLight3D:
 				child.material_override = mat
 		
 
+func turnYellow():
+	var mat := StandardMaterial3D.new()
+	mat.albedo_color = Color(1, 1, 0)
+
+	for child in get_children():
+		if child is not OmniLight3D:
+			child.material_override = mat
+			
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
