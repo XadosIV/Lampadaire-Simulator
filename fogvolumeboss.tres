@@ -1,0 +1,11 @@
+[gd_resource type="FogMaterial" load_steps=3 format=3 uid="uid://cn2nj7od51x6u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_oysan"]
+noise = SubResource("FastNoiseLite_gqbix")
+seamless = true
+
+[resource]
+density = 0.1
+density_texture = SubResource("NoiseTexture3D_oysan")
