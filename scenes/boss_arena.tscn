@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=13 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="9_cwigj"]
+[ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="10_i50kd"]
+[ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="11_tlvdt"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
 _surfaces = [{
@@ -70,32 +72,6 @@ nine_patch_stretch = true
 texture_under = ExtResource("4_7okkn")
 texture_progress = ExtResource("5_84w8w")
 
-[node name="Ascenseur" type="Node3D" parent="."]
-
-[node name="Bumper" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1290574, 0)
-
-[node name="Bumper8" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6875143, 0)
-
-[node name="Bumper2" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1486526, 0)
-
-[node name="Bumper3" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5795255, 0)
-
-[node name="Bumper4" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.423218, 0)
-
-[node name="Bumper5" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.423218, 0)
-
-[node name="Bumper6" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
-
-[node name="Bumper7" parent="Ascenseur" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.652398, 0)
-
 [node name="Canons" type="Node3D" parent="."]
 
 [node name="Bumper" parent="Canons" instance=ExtResource("6_84w8w")]
@@ -130,6 +106,13 @@ transform = Transform3D(0.70710677, 0, 0.7071067, 0, 0.99999994, 0, -0.70710677,
 visible = false
 
 [node name="Multipadaire" parent="." instance=ExtResource("9_cwigj")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 1.3053551, 23.87467)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("10_i50kd")
+
+[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
+material = ExtResource("11_tlvdt")
 
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
 [connection signal="shoot" from="Canons/Canonpadaire" to="Multipadaire" method="got_shot"]

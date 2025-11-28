@@ -116,20 +116,19 @@ transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.4380
 light = false
 
 [node name="Canonpadaire" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(1, 0, 0, 0, 0.9999996, 0, 0, 0, 1, 2, 3, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2, 3, -1)
 isDecoration = true
 
 [node name="Canonpadaire2" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, -2, 3, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2, 3, -1)
 isDecoration = true
 
 [node name="Canonpadaire3" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(1, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999996, -3, 0.0958533, -0.99999994)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3, 0.0958533, -0.99999994)
 isDecoration = true
 
 [node name="Canonpadaire4" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(1, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 3, 0.0958533, -0.99999994)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3, 0.0958533, -0.99999994)
 isDecoration = true
 
-[node name="BossHp" parent="." instance=ExtResource("2_1brw4")]
-[connection signal="visibility_changed" from="." to="BossHp" method="changeVisibility"]
+[node name="BossHp" parent="." instance=ExtResource("4_ffeqy")]
