@@ -131,4 +131,5 @@ isDecoration = true
 transform = Transform3D(1, 0, 0, 0, 0.9999995, 0, 0, 0, 0.9999995, 3, 0.0958533, -0.99999994)
 isDecoration = true
 
-[node name="BossHp" parent="." instance=ExtResource("4_ffeqy")]
+[node name="BossHp" parent="." instance=ExtResource("2_1brw4")]
+[connection signal="visibility_changed" from="." to="BossHp" method="changeVisibility"]

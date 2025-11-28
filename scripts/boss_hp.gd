@@ -22,3 +22,6 @@ func set_hp(value: int) -> void:
 func take_damage(amount: int) -> void:
 	hp = max(hp - amount, 0)
 	set_hp(hp)
+
+func changeVisibility():
+	visible = true
