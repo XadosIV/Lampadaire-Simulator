@@ -2,9 +2,10 @@ extends CharacterBody3D
 
 signal shoot
 @onready var animplayer: AnimationPlayer = $AnimationPlayer
+var hasShot = false
 
 func shooting(body:Node3D):
-	if (body.name == "Player"):
+	if (body.name == "Player" && !hasShot):
 		emit_signal("shoot")
-		animplayer.animation_get_next("shot")
-		print("Yay")
+		animplayer.play("shot")
+		hasShot = true

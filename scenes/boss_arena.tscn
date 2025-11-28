@@ -132,4 +132,7 @@ visible = false
 [node name="Multipadaire" parent="." instance=ExtResource("9_cwigj")]
 
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
+[connection signal="shoot" from="Canons/Canonpadaire" to="Multipadaire" method="got_shot"]
+[connection signal="shoot" from="Canons/Canonpadaire2" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire3" to="Multipadaire" method="got_shot"]
+[connection signal="shoot" from="Canons/Canonpadaire4" to="Multipadaire" method="got_shot"]

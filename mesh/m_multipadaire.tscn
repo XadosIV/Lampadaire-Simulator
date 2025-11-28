@@ -115,3 +115,5 @@ transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.4380
 light = false
 
 [node name="BossHp" parent="." instance=ExtResource("2_1brw4")]
+
+[connection signal="visibility_changed" from="." to="BossHp" method="changeVisibility"]
