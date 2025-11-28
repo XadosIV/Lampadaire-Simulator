@@ -4,3 +4,5 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 script = ExtResource("2_syohv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
