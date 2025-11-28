@@ -106,9 +106,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, 0, 0
 
 [node name="Lampadaire" parent="Root" instance=ExtResource("1_pxfqq")]
 transform = Transform3D(1, 0, 0, 0, 0.8370413, 0.54713964, 0, -0.54713964, 0.8370413, -0.00011372566, -0.3538139, 1.3544358)
+bossLight = true
 
 [node name="Lampadaire2" parent="Root" instance=ExtResource("1_pxfqq")]
-transform = Transform3D(0.13249253, 0.43166718, -0.66038567, 0, 0.6696331, 0.43771178, 0.78895223, -0.07249193, 0.11090173, -0.00048804283, 0.8871434, 0.5921899)
+transform = Transform3D(0.13249253, 0.4316672, -0.66038567, 0, 0.66963315, 0.43771178, 0.78895223, -0.07249194, 0.11090173, -0.00048804283, 0.8871434, 0.5921899)
 light = false
 
 [node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
@@ -116,19 +117,19 @@ transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.4380
 light = false
 
 [node name="Canonpadaire" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2, 3, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.59999996, 0, 0, 0, 0.59999996, 2, 2.9999998, -0.035746038)
 isDecoration = true
 
 [node name="Canonpadaire2" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -2, 3, -1)
+transform = Transform3D(0.6, 0, 0, 0, 0.59999996, 0, 0, 0, 0.59999996, -2, 2.9999998, -0.035746038)
 isDecoration = true
 
 [node name="Canonpadaire3" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -3, 0.0958533, -0.99999994)
+transform = Transform3D(0.6, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, -3, 1.0425924, -0.2289267)
 isDecoration = true
 
 [node name="Canonpadaire4" parent="." instance=ExtResource("2_1brw4")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3, 0.0958533, -0.99999994)
+transform = Transform3D(0.6, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, 3, 1.0425924, -0.2289267)
 isDecoration = true
 
 [node name="BossHp" parent="." instance=ExtResource("4_ffeqy")]
