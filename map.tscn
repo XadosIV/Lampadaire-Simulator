@@ -6,21 +6,15 @@
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_p5pve"]
 [ext_resource type="Script" uid="uid://28y64irdje7d" path="res://scripts/fog_volume.gd" id="3_6qsgm"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_urblq"]
+[ext_resource type="Material" uid="uid://vir6mt1s4cfi" path="res://fogvolume.tres" id="4_wbpbn"]
+[ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="6_a6rn7"]
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="6_iw27f"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="9_gqbix"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="10_0t07s"]
 [ext_resource type="PackedScene" uid="uid://b7yuq8n2k3fmj" path="res://mesh/m_petipadaire.tscn" id="10_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://bdxjvd45jdi71" path="res://scenes/boss_arena.tscn" id="11_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="14_ooc2g"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_oysan"]
-noise = SubResource("FastNoiseLite_gqbix")
-seamless = true
-
-[sub_resource type="FogMaterial" id="FogMaterial_sb2pt"]
-density_texture = SubResource("NoiseTexture3D_oysan")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_urblq"]
 emission_shape = 3
@@ -59,7 +53,7 @@ size = Vector3(49, 1, 49)
 script = ExtResource("1_2wwcf")
 
 [node name="Player" parent="." node_paths=PackedStringArray("menu_pause", "boss_hp_ui") instance=ExtResource("1_c7s6e")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.9890423, 1.705339, 0.8261051)
 menu_pause = NodePath("../MenuPause")
 boss_hp_ui = NodePath("")
 
@@ -73,8 +67,10 @@ environment = ExtResource("2_gqbix")
 
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
 shape = 4
-material = SubResource("FogMaterial_sb2pt")
+material = ExtResource("4_wbpbn")
 script = ExtResource("3_6qsgm")
+volumePasBoss = ExtResource("4_wbpbn")
+volumeBoss = ExtResource("6_a6rn7")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3807774, 0)
