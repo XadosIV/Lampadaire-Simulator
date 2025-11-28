@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://images/heart.png" id="5_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
+[ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
 _surfaces = [{
@@ -106,8 +107,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
 shape = SubResource("BoxShape3D_84w8w")
 
 [node name="Bumper" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.959, 1, -15.903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -16)
 strength = 20.0
+
+[node name="Canonpadaire" parent="Canons" instance=ExtResource("7_vi6v3")]
+transform = Transform3D(-0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, -0.7071067, -16, 10, -16)
 
 [node name="CanonTrigger2" type="Area3D" parent="Canons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.12848, 12.28603, -16.082504)
@@ -117,8 +121,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
 shape = SubResource("BoxShape3D_84w8w")
 
 [node name="Bumper2" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.128, 1, -16.083)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -16)
 strength = 20.0
+
+[node name="Canonpadaire2" parent="Canons" instance=ExtResource("7_vi6v3")]
+transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 0.99999994, 0, -0.7071067, 0, -0.7071067, 16, 10, -16)
 
 [node name="CanonTrigger3" type="Area3D" parent="Canons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.206665, 12.28603, 15.973497)
@@ -131,6 +138,9 @@ shape = SubResource("BoxShape3D_84w8w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.207, 1, 15.973)
 strength = 20.0
 
+[node name="Canonpadaire3" parent="Canons" instance=ExtResource("7_vi6v3")]
+transform = Transform3D(0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, 0.7071067, -16, 10, 16)
+
 [node name="CanonTrigger4" type="Area3D" parent="Canons"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.323273, 12.28603, 15.8569)
 
@@ -138,8 +148,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.323273, 12.28603, 15.8569)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.64907455, 0)
 shape = SubResource("BoxShape3D_84w8w")
 
+[node name="Canonpadaire4" parent="Canons" instance=ExtResource("7_vi6v3")]
+transform = Transform3D(0.70710677, 0, 0.7071067, 0, 0.99999994, 0, -0.70710677, 0, 0.7071067, 16, 10, 16)
+
 [node name="Bumper4" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.323, 1, 15.857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 16)
 strength = 20.0
 
 [node name="MenuPause" parent="." instance=ExtResource("6_6wr5o")]
