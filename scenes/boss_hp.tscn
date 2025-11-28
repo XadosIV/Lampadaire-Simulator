@@ -45,7 +45,7 @@ grow_vertical = 2
 texture = ExtResource("2_qvx8b")
 
 [node name="Debut" type="Marker2D" parent="."]
-position = Vector2(-427, 0)
+position = Vector2(-464, 0)
 
 [node name="Fin" type="Marker2D" parent="."]
 position = Vector2(256, 0)
