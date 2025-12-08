@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq2f48vn38fw6"]
+
+[ext_resource type="Script" uid="uid://cw4r4l048sbeh" path="res://projectilepadaire.gd" id="1_msfsr"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_rofvt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_msfsr"]
+size = Vector3(0.43981934, 0.2524414, 1.9421387)
+
+[node name="projectilepadaire" type="Node3D"]
+script = ExtResource("1_msfsr")
+
+[node name="Lampadaire" parent="." instance=ExtResource("2_rofvt")]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0)
+light = false
+jaune = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013000488, -0.016601563, -0.47106934)
+shape = SubResource("BoxShape3D_msfsr")

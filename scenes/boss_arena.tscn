@@ -1,10 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
-[ext_resource type="Texture2D" uid="uid://cn3uynre668x2" path="res://images/heart2.png" id="4_7okkn"]
-[ext_resource type="Texture2D" uid="uid://c0wb3r4vxa203" path="res://images/heart.png" id="5_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
@@ -53,24 +51,9 @@ transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.622
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Player" parent="." node_paths=PackedStringArray("slider", "menu_pause") instance=ExtResource("3_n4yxd")]
+[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("3_n4yxd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
-slider = NodePath("../CanvasLayer/TextureProgressBar")
 menu_pause = NodePath("../MenuPause")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_left = 39.0
-offset_top = 33.0
-offset_right = 201.0
-offset_bottom = 195.0
-step = 10.0
-value = 50.0
-fill_mode = 3
-nine_patch_stretch = true
-texture_under = ExtResource("4_7okkn")
-texture_progress = ExtResource("5_84w8w")
 
 [node name="Canons" type="Node3D" parent="."]
 

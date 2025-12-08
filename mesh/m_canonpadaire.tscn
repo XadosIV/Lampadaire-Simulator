@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd7ld6vqk12dq"]
+[gd_scene load_steps=9 format=3 uid="uid://dd7ld6vqk12dq"]
 
 [ext_resource type="Script" uid="uid://b3b0i41eid7tf" path="res://scripts/m_canonpadaire.gd" id="1_rt8xm"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_5ygvq"]
+[ext_resource type="PackedScene" uid="uid://cq2f48vn38fw6" path="res://mesh/m_projectilepadaire.tscn" id="2_nn0yu"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -401,6 +402,7 @@ height = 0.5162964
 [node name="Canonpadaire" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_rt8xm")
+lampadaireNode = ExtResource("2_nn0yu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

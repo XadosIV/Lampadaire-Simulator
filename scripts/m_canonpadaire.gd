@@ -1,17 +1,22 @@
 extends CharacterBody3D
 
+@export var lampadaireNode : PackedScene
+
 signal shoot
 @onready var animplayer: AnimationPlayer = $AnimationPlayer
 @onready var padraies: Node3D = $Root
 var hasShot = false
 @export var isDecoration = false
 
-@onready var boss = get_node("../../Multipadaire")
+@onready var boss = get_node("../../Multipadaire") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
 
 var player
 
+@export var maxShootTimer = 0.4
+var shootTimer = maxShootTimer
+
 func _ready():
-	player = get_node("/root/Map/Player")
+	player = get_node_or_null("/root/Map/Player")
 	if not player:
 		player = get_node("/root/BossArena/Player")
 	if(!isDecoration):
@@ -27,6 +32,13 @@ func _process(_delta):
 		look_at(player.position)
 	if hasShot:
 		look_at(boss.position + Vector3(0,15,0))
+		shootTimer -= _delta
+		if shootTimer <= 0:
+			shootTimer = maxShootTimer
+			var projectile : Node3D = lampadaireNode.instantiate()
+			get_parent().add_child(projectile)
+			projectile.position = position
+			projectile.look_at(boss.position + Vector3(0,15,0))
 
 func shooting(body:Node3D):
 	if isDecoration: return
