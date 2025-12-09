@@ -5,7 +5,7 @@ var popup_done := false
 signal defog
 
 func move_to_center():
-	var center_pos = Vector3(20, 50, 10)
+	var center_pos = Vector3(0, 50, 0)
 	emit_signal("defog")
 	var tween = create_tween()
 	$Multipadaire.Hpbar.visible = true

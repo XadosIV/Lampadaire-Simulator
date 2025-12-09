@@ -134,7 +134,7 @@ transform = Transform3D(0.9999927, 0, 0.0038047954, 0, 1, 0, -0.0038047954, 0, 0
 transform = Transform3D(0.9999927, 0, 0.0038047954, 0, 1, 0, -0.0038047954, 0, 0.9999927, 1.1268969, 8.544848, 5.32305)
 
 [node name="Mesh17" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
-transform = Transform3D(0.9999927, 0, 0.0038047954, 0, 1, 0, -0.0038047954, 0, 0.9999927, -4.8894825, 11.3939495, 5.32305)
+transform = Transform3D(0.635957, 0, -0.77172446, 0, 1, 0, 0.77172446, 0, 0.635957, -3.991881, 11.3939495, 4.324124)
 
 [node name="Mesh18" parent="NavigationRegion3D/CSGCombiner3D" instance=ExtResource("2_p5pve")]
 transform = Transform3D(0.9999927, 0, 0.0038047954, 0, 1, 0, -0.0038047954, 0, 0.9999927, -16.91, 35, -7.04)
@@ -322,7 +322,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.661737, 5.7491026, 7.41752
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.589877, 7.286971, 5.847788)
 
 [node name="Bumper4" parent="Bumpers" instance=ExtResource("9_gqbix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.927822, 3.5329442, -3.4226885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.906888, 4.989791, -4.1400557)
 strength = 27.0
 
 [node name="Bumper5" parent="Bumpers" instance=ExtResource("9_gqbix")]
