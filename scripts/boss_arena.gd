@@ -3,6 +3,7 @@ extends Node3D
 @export var popup : Control
 var popup_done := false
 signal defog
+signal start_boss
 
 func move_to_center():
 	var center_pos = Vector3(0, 50, 0)
@@ -16,6 +17,7 @@ func _on_body_entered_popup(body: Node3D) -> void:
 	if popup_done:
 		return
 	if body.name == "Player":
+		emit_signal("start_boss")
 		popup_done = true
 		popup.visible = true
 		get_tree().paused = true

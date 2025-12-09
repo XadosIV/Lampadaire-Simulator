@@ -112,6 +112,7 @@ process_mode = 3
 visible = false
 
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
+[connection signal="start_boss" from="." to="Multipadaire" method="activateCanons"]
 [connection signal="body_entered" from="CSGCombiner3D/Area3D" to="." method="_on_body_entered_popup"]
 [connection signal="shoot" from="Canons/Canonpadaire" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire2" to="Multipadaire" method="got_shot"]
