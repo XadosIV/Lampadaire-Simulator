@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlawcca5uduoj"]
+
+[ext_resource type="Script" uid="uid://cy1imu43cfm08" path="res://scripts/bumper_projectile.gd" id="1_64r4x"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_uuv3b"]
+
+[sub_resource type="Animation" id="Animation_7acgw"]
+resource_name = "BUMP"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/CollisionShape3D/CanonFond:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5, 0.05, 1.5), Vector3(1.5, 0.2, 1.5), Vector3(1.5, 0.05, 1.5)]
+}
+
+[sub_resource type="Animation" id="Animation_jsfdk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/CollisionShape3D/CanonFond:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5, 0.05, 1.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsfdk"]
+_data = {
+&"BUMP": SubResource("Animation_7acgw"),
+&"RESET": SubResource("Animation_jsfdk")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6an6i"]
+height = 0.30212402
+radius = 0.6245117
+
+[node name="Bumper" type="Node3D" node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_64r4x")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jsfdk")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, -6.981317e-05, 0, 1, 0, 6.981317e-05, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_6an6i")
+
+[node name="CanonFond" parent="Area3D/CollisionShape3D" instance=ExtResource("2_uuv3b")]
+transform = Transform3D(1.5, 0, 0.00010471976, 0, 0.05, 0, -0.00010471976, 0, 1.5, 0, 0, 0)
+jaune = true
+
+[connection signal="body_entered" from="Area3D" to="." method="bounce"]
