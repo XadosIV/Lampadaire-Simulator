@@ -7,6 +7,9 @@ signal shoot
 @onready var padraies: Node3D = $Root
 var hasShot = false
 @export var isDecoration = false
+@export var decorationBullet : PackedScene
+var decorationHasShot := false
+
 
 @onready var boss = get_node("../../Multipadaire") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
 
@@ -47,3 +50,23 @@ func shooting(body:Node3D):
 		emit_signal("shoot")
 		animplayer.play("shot")
 		hasShot = true
+
+func shootingPlayer():
+	if isDecoration:
+		shoot_decoration_bullet()
+		decorationHasShot = true
+
+func shoot_decoration_bullet():
+	if decorationBullet == null:
+		push_warning("Decoration has no bullet scene assigned!")
+		return
+		
+	animplayer.play("shot")
+	
+	var projectile: Node3D = decorationBullet.instantiate()
+	
+	get_parent().add_child(projectile)
+	projectile.global_transform = $ProjectileStart.global_transform
+	projectile.get_player_pos(player.position)
+	
+	projectile.look_at(player.global_position)

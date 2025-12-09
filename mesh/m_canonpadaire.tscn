@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd7ld6vqk12dq"]
+[gd_scene load_steps=10 format=3 uid="uid://dd7ld6vqk12dq"]
 
 [ext_resource type="Script" uid="uid://b3b0i41eid7tf" path="res://scripts/m_canonpadaire.gd" id="1_rt8xm"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_5ygvq"]
 [ext_resource type="PackedScene" uid="uid://cq2f48vn38fw6" path="res://mesh/m_projectilepadaire.tscn" id="2_nn0yu"]
+[ext_resource type="PackedScene" uid="uid://dlawcca5uduoj" path="res://scenes/bumperProjectile.tscn" id="3_nn0yu"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -403,6 +404,7 @@ height = 0.5162964
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_rt8xm")
 lampadaireNode = ExtResource("2_nn0yu")
+decorationBullet = ExtResource("3_nn0yu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -475,5 +477,8 @@ shape = SubResource("CylinderShape3D_rt8xm")
 transform = Transform3D(1, 0, 0, 0, 0.9999938, 0, 0, 0, 0.9999938, -0.034238815, -0.77903205, 0.0307627)
 shape = SubResource("CylinderShape3D_rt8xm")
 disabled = true
+
+[node name="ProjectileStart" type="Node3D" parent="."]
+transform = Transform3D(0.8660254, 0, 0.49999994, 0, 0.9999999, 0, -0.5, 0, 0.86602527, 0, 0.01993835, -1.2680453)
 
 [connection signal="body_entered" from="Area3D" to="." method="shooting"]
