@@ -34,14 +34,14 @@ func _process(_delta):
 	if isDecoration:
 		look_at(player.position)
 	if hasShot:
-		look_at(boss.position + Vector3(0,15,0))
+		look_at(boss.position + Vector3(0,60,0))
 		shootTimer -= _delta
 		if shootTimer <= 0:
 			shootTimer = maxShootTimer
 			var projectile : Node3D = lampadaireNode.instantiate()
 			get_parent().add_child(projectile)
 			projectile.position = position
-			projectile.look_at(boss.position + Vector3(0,15,0))
+			projectile.look_at(boss.position + Vector3(0,60,0))
 
 func shooting(body:Node3D):
 	if isDecoration: return
