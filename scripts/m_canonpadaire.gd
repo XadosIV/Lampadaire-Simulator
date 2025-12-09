@@ -12,6 +12,7 @@ var decorationHasShot := false
 
 
 @onready var boss = get_node("../../Multipadaire") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
+@onready var boss_target = boss.get_node("Area3D/CollisionShape3D") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
 
 var player
 
@@ -22,26 +23,26 @@ func _ready():
 	player = get_node_or_null("/root/Map/Player")
 	if not player:
 		player = get_node("/root/BossArena/Player")
-	if(!isDecoration):
-		var padaires:Array[Node] =padraies.get_children()
-		for x in padaires:
-			x.turnYellow()
 	
 	animplayer.play("fly")
+	
+	if not isDecoration:
+		for i in $Root.get_children():
+			i.turnFriendly()
 	
 
 func _process(_delta):
 	if isDecoration:
 		look_at(player.position)
 	if hasShot:
-		look_at(boss.position + Vector3(0,60,0))
+		look_at(boss_target.global_position)
 		shootTimer -= _delta
 		if shootTimer <= 0:
 			shootTimer = maxShootTimer
 			var projectile : Node3D = lampadaireNode.instantiate()
 			get_parent().add_child(projectile)
 			projectile.position = position
-			projectile.look_at(boss.position + Vector3(0,60,0))
+			projectile.look_at(boss_target.global_position)
 
 func shooting(body:Node3D):
 	if isDecoration: return

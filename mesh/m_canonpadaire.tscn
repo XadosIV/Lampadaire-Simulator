@@ -398,7 +398,8 @@ _data = {
 }
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rt8xm"]
-height = 0.5162964
+height = 0.671
+radius = 0.88
 
 [node name="Canonpadaire" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -470,13 +471,8 @@ light = false
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.034238815, -0.10572492, 0.29684946)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999994, 0, 0, 0, 0.999994, 0, -0.6733073, -0.26608685)
+transform = Transform3D(1, 0, 0, 0, 0.99999386, 0, 0, 0, 0.99999386, 0, 0.12381387, -0.6752535)
 shape = SubResource("CylinderShape3D_rt8xm")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9999938, 0, 0, 0, 0.9999938, -0.034238815, -0.77903205, 0.0307627)
-shape = SubResource("CylinderShape3D_rt8xm")
-disabled = true
 
 [node name="ProjectileStart" type="Node3D" parent="."]
 transform = Transform3D(0.8660254, 0, 0.49999994, 0, 0.9999999, 0, -0.5, 0, 0.86602527, 0, 0.01993835, -1.2680453)

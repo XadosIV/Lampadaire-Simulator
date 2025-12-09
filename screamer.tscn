@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmg2qlcefswxx"]
+
+[ext_resource type="Script" uid="uid://pjvqi4as6tcq" path="res://screamer.gd" id="1_2p01n"]
+[ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c5v53"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="3_56rxa"]
+[ext_resource type="Script" uid="uid://craglu6p1ya37" path="res://screamer_padaire.gd" id="3_xy3r0"]
+[ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="5_iqqps"]
+[ext_resource type="AudioStream" uid="uid://bmvupy38f4is" path="res://lightsound.wav" id="6_cgtea"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2p01n"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_56rxa"]
+material = SubResource("StandardMaterial3D_2p01n")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5v53"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="Animation" id="Animation_iqqps"]
+resource_name = "screamerBonk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lampadaire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5126419, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cgtea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lampadaire:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7s8n"]
+_data = {
+&"RESET": SubResource("Animation_cgtea"),
+&"screamerBonk": SubResource("Animation_iqqps")
+}
+
+[node name="Screamer" type="Node3D"]
+script = ExtResource("1_2p01n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.304008)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
+shape = SubResource("BoxShape3D_c5v53")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.461323, 18.815464)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.805167, -5.163006)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.805167, 12.495946)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -7.999948, 3.8056204, 20.112)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 8, 3.805, 20.243)
+mesh = SubResource("BoxMesh_56rxa")
+
+[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("1_c5v53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3241153, 0)
+menu_pause = NodePath("../MenuPause")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.3241153, 0)
+stream = ExtResource("6_cgtea")
+
+[node name="ScreamerPadaire" type="Node3D" parent="." node_paths=PackedStringArray("audioStreamPlayer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.314167)
+script = ExtResource("3_xy3r0")
+audioStreamPlayer = NodePath("../Player/AudioStreamPlayer3D")
+
+[node name="Lampadaire" parent="ScreamerPadaire" instance=ExtResource("3_56rxa")]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0.89030993, 25.02874)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreamerPadaire"]
+libraries = {
+&"": SubResource("AnimationLibrary_f7s8n")
+}
+
+[node name="MenuPause" parent="." instance=ExtResource("5_iqqps")]

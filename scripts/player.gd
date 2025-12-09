@@ -52,7 +52,7 @@ var camera_anglev = 0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		menu_pause.visible = true	
+		menu_pause.visible = true
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -78,7 +78,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func apply_bump(force: Vector3):
 	pushed = true
 	pushleft = force.length()/100
-	print(pushleft)
 	# Force max pour éviter les éjections trop fortes
 	var max_force = 100.0
 	if force.length() > max_force:
