@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=12 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="9_cwigj"]
+[ext_resource type="PackedScene" uid="uid://ueipjt2jg7cl" path="res://scenes/VictoryScreen.tscn" id="9_io3m0"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="10_i50kd"]
 [ext_resource type="PackedScene" uid="uid://c050h4x2mylur" path="res://scenes/PopupBoss_Fight.tscn" id="10_io3m0"]
 [ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="11_tlvdt"]
@@ -23,9 +24,10 @@ _surfaces = [{
 "vertex_data": PackedByteArray("wFW/wWB2k7/A9r9BwFW/wWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/QWB2k7/A9r/BwFW/wWB2k7/A9r/BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r/BwFW/QWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r9BwFW/wWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/wQCzG77A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QWB2k7/A9r9BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r/BwFW/QQCzG77A9r/BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r/BwFW/QWB2k7/A9r/BAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
-[node name="BossArena" type="Node3D" node_paths=PackedStringArray("popup")]
+[node name="BossArena" type="Node3D" node_paths=PackedStringArray("popup", "victoryScreen")]
 script = ExtResource("1_6wr5o")
 popup = NodePath("Popup_boss_help")
+victoryScreen = NodePath("VictoryScreen")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -94,6 +96,9 @@ material = ExtResource("11_tlvdt")
 process_mode = 3
 visible = false
 
+[node name="VictoryScreen" parent="." instance=ExtResource("9_io3m0")]
+visible = false
+
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
 [connection signal="start_boss" from="." to="Multipadaire" method="activateCanons"]
 [connection signal="body_entered" from="CSGCombiner3D/Area3D" to="." method="_on_body_entered_popup"]
@@ -101,3 +106,4 @@ visible = false
 [connection signal="shoot" from="Canons/Canonpadaire2" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire3" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire4" to="Multipadaire" method="got_shot"]
+[connection signal="boss_dead" from="Multipadaire" to="." method="victory"]
