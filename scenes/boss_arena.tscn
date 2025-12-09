@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
-[ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="9_cwigj"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="10_i50kd"]
@@ -63,33 +62,17 @@ shadow_enabled = true
 
 [node name="Canons" type="Node3D" parent="."]
 
-[node name="Bumper" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -16)
-strength = 20.0
-
 [node name="Canonpadaire" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(-0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, -0.7071067, -16, 10, -16)
 decorationBullet = null
-
-[node name="Bumper2" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, -16)
-strength = 20.0
 
 [node name="Canonpadaire2" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 0.99999994, 0, -0.7071067, 0, -0.7071067, 16, 10, -16)
 decorationBullet = null
 
-[node name="Bumper3" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.207, 1, 15.973)
-strength = 20.0
-
 [node name="Canonpadaire3" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, 0.7071067, -16, 10, 16)
 decorationBullet = null
-
-[node name="Bumper4" parent="Canons" instance=ExtResource("6_84w8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 16)
-strength = 20.0
 
 [node name="Canonpadaire4" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(0.70710677, 0, 0.7071067, 0, 0.99999994, 0, -0.70710677, 0, 0.7071067, 16, 10, 16)
