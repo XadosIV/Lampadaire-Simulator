@@ -4,7 +4,7 @@ extends Node3D
 @onready var canons : Array[CharacterBody3D] = [$Canonpadaire,$Canonpadaire2,$Canonpadaire3,$Canonpadaire4]
 
 
-@export var maxShootTimer = 0.4
+@export var maxShootTimer = 1
 var shootTimer = maxShootTimer
 
 func got_shot():

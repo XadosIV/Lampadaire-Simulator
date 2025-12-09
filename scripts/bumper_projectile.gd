@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var strength: float = 10
+@export var strength: float = 15
 @export var anim_player: AnimationPlayer
 @export var speed: float = 10
 @export var lifespan: float = 10
