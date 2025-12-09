@@ -71,7 +71,7 @@ text = "Resume"
 [node name="Leavebutton" type="Button" parent="TextureRect2/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
-text = "Exit"
+text = "Main Menu"
 
 [connection signal="pressed" from="TextureRect2/VBoxContainer/Resumebutton" to="." method="_on_resumebutton_pressed"]
 [connection signal="pressed" from="TextureRect2/VBoxContainer/Leavebutton" to="." method="_on_leavebutton_pressed"]
