@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="11_tlvdt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cwigj"]
-size = Vector3(38.068604, 1, 38.401825)
+size = Vector3(43.97357, 1, 43.507195)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
 _surfaces = [{
@@ -50,7 +50,7 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 1, 0
 [node name="Area3D" type="Area3D" parent="CSGCombiner3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27697754, 0, -0.0320282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07846069, 0, -0.022571564)
 shape = SubResource("BoxShape3D_cwigj")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
