@@ -2,13 +2,16 @@ extends Node3D
 
 @onready var Hpbar : BossHp = $BossHp
 @onready var canons : Array[CharacterBody3D] = [$Canonpadaire,$Canonpadaire2,$Canonpadaire3,$Canonpadaire4]
-
-
 @export var maxShootTimer = 1
 var shootTimer = maxShootTimer
+var hits = 0
+signal boss_dead
 
 func got_shot():
 	Hpbar.take_damage(25)
+	hits+=1
+	if (hits == 4):
+		emit_signal("boss_dead")
 
 func activateCanons():
 	for canon in canons:
