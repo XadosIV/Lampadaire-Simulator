@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=12 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
-[ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="3_n4yxd"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://y886jlbna0ww" path="res://scenes/bumper.tscn" id="6_84w8w"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="7_vi6v3"]
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://mesh/m_multipadaire.tscn" id="9_cwigj"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="10_i50kd"]
+[ext_resource type="PackedScene" uid="uid://c050h4x2mylur" path="res://scenes/PopupBoss_Fight.tscn" id="10_io3m0"]
 [ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="11_tlvdt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwigj"]
+size = Vector3(38.068604, 1, 38.401825)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7okkn"]
 _surfaces = [{
@@ -21,8 +24,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("wFW/wWB2k7/A9r9BwFW/wWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/QWB2k7/A9r/BwFW/wWB2k7/A9r/BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r/BwFW/QWB2k7/A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r9BwFW/wWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/wQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/wQCzG77A9r9BwFW/wQCzG77A9r/BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r9BwFW/wWB2k7/A9r9BwFW/QWB2k7/A9r/BwFW/QWB2k7/A9r9BwFW/QQCzG77A9r9BwFW/QWB2k7/A9r/BwFW/QQCzG77A9r/BwFW/wQCzG77A9r/BwFW/wQCzG77A9r/BwFW/QQCzG77A9r/BwFW/QQCzG77A9r9BwFW/QQCzG77A9r9BwFW/QQCzG77A9r/BwFW/QWB2k7/A9r/BAAD/f/9//n8AAP9//3/+fwAA/3//f/5//38AAP//AAD/fwAA//8AAP9/AAD//wAA/////wAA/z//////AAD/P/////8AAP8/AAD/f/9//n8AAP9//3/+fwAA/3//f/5//3//fwAA/z//f/9/AAD/P/9//38AAP8//3//////AAD/f/////8AAP9//////wAA/38AAP//AAD/fwAA//8AAP9/AAD//wAA/3//fwAA/z//f/9/AAD/P/9//38AAP8/////f/9//n////9//3/+f////3//f/5//////wAA/z//////AAD/P/////8AAP8//3//////AAD/f/////8AAP9//////wAA////f/9//n////9//3/+f////3//f/5/")
 }]
 
-[node name="BossArena" type="Node3D"]
+[node name="BossArena" type="Node3D" node_paths=PackedStringArray("popup")]
 script = ExtResource("1_6wr5o")
+popup = NodePath("Popup_boss_help")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -43,6 +47,12 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -23,
 [node name="ArenaWall4" parent="CSGCombiner3D" instance=ExtResource("2_5gcvm")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 1, 0, 23)
 
+[node name="Area3D" type="Area3D" parent="CSGCombiner3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGCombiner3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27697754, 0, -0.0320282)
+shape = SubResource("BoxShape3D_cwigj")
+
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_7okkn")
 
@@ -51,11 +61,8 @@ transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.622
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("3_n4yxd")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.0062559, 1.4009116)
-menu_pause = NodePath("../MenuPause")
-
 [node name="Canons" type="Node3D" parent="."]
+visible = false
 
 [node name="Bumper" parent="Canons" instance=ExtResource("6_84w8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, -16)
@@ -97,7 +104,12 @@ environment = ExtResource("10_i50kd")
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
 material = ExtResource("11_tlvdt")
 
+[node name="Popup_boss_help" parent="." instance=ExtResource("10_io3m0")]
+process_mode = 3
+visible = false
+
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
+[connection signal="body_entered" from="CSGCombiner3D/Area3D" to="." method="_on_body_entered_popup"]
 [connection signal="shoot" from="Canons/Canonpadaire" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire2" to="Multipadaire" method="got_shot"]
 [connection signal="shoot" from="Canons/Canonpadaire3" to="Multipadaire" method="got_shot"]

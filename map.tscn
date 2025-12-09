@@ -334,11 +334,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.626064, 15.7002735, 8.39615
 strength = 15.0
 
 [node name="Bumper7" parent="Bumpers" instance=ExtResource("9_gqbix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.986, 25, 11.657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.986, 22.653831, 11.657)
 strength = 15.0
 
 [node name="Bumper8" parent="Bumpers" instance=ExtResource("9_gqbix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.958, 35, 11.657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.958, 32.018707, 11.657)
 strength = 15.0
 
 [node name="Ascenseur" type="Node3D" parent="."]
@@ -349,6 +349,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1290574, 0)
 
 [node name="Bumper8" parent="Ascenseur" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6875143, 0)
+
+[node name="Bumper9" parent="Ascenseur" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15235138, 0)
+
+[node name="Bumper10" parent="Ascenseur" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0129013, 0)
+
+[node name="Bumper11" parent="Ascenseur" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2008553, 0)
+
+[node name="Bumper12" parent="Ascenseur" instance=ExtResource("9_gqbix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7304726, 0)
 
 [node name="Bumper2" parent="Ascenseur" instance=ExtResource("9_gqbix")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1486526, 0)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c050h4x2mylur"]
+[gd_scene load_steps=6 format=3 uid="uid://c050h4x2mylur"]
 
 [ext_resource type="Texture2D" uid="uid://co61cj3j1aaf6" path="res://images/Multipadaire_image.png" id="1_kinly"]
+[ext_resource type="Script" uid="uid://dax06o30klpnk" path="res://scripts/Popup.gd" id="1_td2ba"]
 
 [sub_resource type="Gradient" id="Gradient_v3b0u"]
 offsets = PackedFloat32Array(0)
@@ -12,13 +13,14 @@ gradient = SubResource("Gradient_v3b0u")
 [sub_resource type="LabelSettings" id="LabelSettings_kinly"]
 font_size = 44
 
-[node name="Control" type="Control"]
+[node name="Popup" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_td2ba")
 
 [node name="MenuPanel" type="TextureRect" parent="."]
 z_index = 1
@@ -89,4 +91,4 @@ expand_mode = 3
 layout_mode = 2
 text = "Compris"
 
-[connection signal="pressed" from="MenuPanel/VBoxContainer/Quitter" to="MenuPanel" method="_on_quitter_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Quitter" to="." method="_on_quitter_pressed"]
