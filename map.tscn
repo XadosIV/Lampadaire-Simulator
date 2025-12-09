@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cub0ryurwwwl0"]
+[gd_scene load_steps=22 format=3 uid="uid://cub0ryurwwwl0"]
 
 [ext_resource type="Script" uid="uid://gu0s3silasc3" path="res://scripts/Manager.gd" id="1_2wwcf"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="1_c7s6e"]
@@ -6,7 +6,6 @@
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="2_gqbix"]
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_p5pve"]
 [ext_resource type="Script" uid="uid://28y64irdje7d" path="res://scripts/fog_volume.gd" id="3_6qsgm"]
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_urblq"]
 [ext_resource type="Material" uid="uid://vir6mt1s4cfi" path="res://fogvolume.tres" id="4_wbpbn"]
 [ext_resource type="Material" uid="uid://cn2nj7od51x6u" path="res://fogvolumeboss.tres" id="6_a6rn7"]
 [ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="6_iw27f"]
@@ -52,10 +51,9 @@ size = Vector3(49, 1, 49)
 [node name="Map" type="Node3D"]
 script = ExtResource("1_2wwcf")
 
-[node name="Player" parent="." node_paths=PackedStringArray("menu_pause", "boss_hp_ui") instance=ExtResource("1_c7s6e")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -0.9890423, 1.705339, 0.8261051)
+[node name="Player" parent="." node_paths=PackedStringArray("menu_pause") instance=ExtResource("1_c7s6e")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 4.4607124, 16.949682, 9.143455)
 menu_pause = NodePath("../MenuPause")
-boss_hp_ui = NodePath("")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.6220365, 0.7829882, 0, -0.7829882, -0.6220365, 0, 3.9674017, 0)

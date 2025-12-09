@@ -136,6 +136,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, 3, 1.042592
 isDecoration = true
 
 [node name="BossHp" parent="." instance=ExtResource("4_ffeqy")]
+visible = false
 
 [node name="Area3D" type="Area3D" parent="."]
 
