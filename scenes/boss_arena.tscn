@@ -66,19 +66,15 @@ shadow_enabled = true
 
 [node name="Canonpadaire" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(-0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, -0.7071067, -16, 10, -16)
-decorationBullet = null
 
 [node name="Canonpadaire2" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(-0.7071067, 0, 0.7071067, 0, 0.99999994, 0, -0.7071067, 0, -0.7071067, 16, 10, -16)
-decorationBullet = null
 
 [node name="Canonpadaire3" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 0.99999994, 0, 0.7071067, 0, 0.7071067, -16, 10, 16)
-decorationBullet = null
 
 [node name="Canonpadaire4" parent="Canons" instance=ExtResource("7_vi6v3")]
 transform = Transform3D(0.70710677, 0, 0.7071067, 0, 0.99999994, 0, -0.70710677, 0, 0.7071067, 16, 10, 16)
-decorationBullet = null
 
 [node name="MenuPause" parent="." instance=ExtResource("6_6wr5o")]
 visible = false

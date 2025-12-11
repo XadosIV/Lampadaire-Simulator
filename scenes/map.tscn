@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://cub0ryurwwwl0"]
 
-[ext_resource type="Script" uid="uid://gu0s3silasc3" path="res://scripts/manager.gd" id="1_n1psn"]
+[ext_resource type="Script" uid="uid://gu0s3silasc3" path="res://scripts/Manager.gd" id="1_n1psn"]
 [ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="2_c00ee"]
 [ext_resource type="Environment" uid="uid://mx1f8qha1wft" path="res://fog.tres" id="3_p7tei"]
 [ext_resource type="Material" uid="uid://vir6mt1s4cfi" path="res://fogvolume.tres" id="4_c70he"]
