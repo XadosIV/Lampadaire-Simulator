@@ -1,8 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6kt7m4vvupgn"]
+[gd_scene load_steps=12 format=3 uid="uid://c6kt7m4vvupgn"]
 
 [ext_resource type="Material" uid="uid://c7ov6owwjyye5" path="res://m_explosion.tres" id="1_q7epf"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_vxas0"]
 
 [sub_resource type="Curve" id="Curve_j4sxf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5016078, 0), 0.0, 0.0, 0, 0, Vector2(0.91318333, 1), 0.0, 0.0, 0, 0]
@@ -47,11 +45,6 @@ alpha_curve = SubResource("CurveTexture_m5xho")
 [sub_resource type="SphereMesh" id="SphereMesh_j4sxf"]
 
 [node name="Node3D" type="Node3D"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0733433, 0, 0)
-material_override = ExtResource("1_q7epf")
-mesh = SubResource("SphereMesh_vxas0")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 material_override = ExtResource("1_q7epf")
