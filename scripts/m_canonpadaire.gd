@@ -43,7 +43,7 @@ func _process(_delta):
 			projectile.look_at(boss_target.global_position)
 
 func shooting(body:Node3D):
-	if canShot: return
+	if isDecoration: return
 	
 	if (body.name == "Player" && !hasShot):
 		emit_signal("shoot")
