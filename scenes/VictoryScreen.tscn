@@ -64,6 +64,6 @@ vertical_alignment = 1
 
 [node name="Quitter" type="Button" parent="MenuPanel/VBoxContainer"]
 layout_mode = 2
-text = "Yay"
+text = "Menux"
 
 [connection signal="pressed" from="MenuPanel/VBoxContainer/Quitter" to="." method="_on_winning"]
