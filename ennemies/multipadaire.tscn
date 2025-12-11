@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dwmn41vijllfd"]
 
-[ext_resource type="Script" uid="uid://bl1j0p16r6662" path="res://scripts/boss.gd" id="1_n6xsv"]
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_pxfqq"]
-[ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://mesh/m_canonpadaire.tscn" id="2_1brw4"]
-[ext_resource type="PackedScene" uid="uid://bfros5qrhr555" path="res://scenes/boss_hp.tscn" id="4_ffeqy"]
+[ext_resource type="Script" uid="uid://bl1j0p16r6662" path="res://scripts/boss.gd" id="1_qohsi"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_fjhke"]
+[ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://ennemies/canonpadaire.tscn" id="3_87h4w"]
+[ext_resource type="PackedScene" uid="uid://bfros5qrhr555" path="res://scenes/boss_hp.tscn" id="4_cfocy"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -96,7 +96,7 @@ size = Vector3(0.4309082, 0.46826172, 0.17236328)
 
 [node name="Multipadaire" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-script = ExtResource("1_n6xsv")
+script = ExtResource("1_qohsi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -107,35 +107,35 @@ autoplay = "fly"
 [node name="Root" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, 0, 0, 0)
 
-[node name="Lampadaire" parent="Root" instance=ExtResource("1_pxfqq")]
+[node name="Lampadaire" parent="Root" instance=ExtResource("2_fjhke")]
 transform = Transform3D(1, 0, 0, 0, 0.8370413, 0.54713964, 0, -0.54713964, 0.8370413, -0.00011372566, -0.3538139, 1.3544358)
 bossLight = true
 
-[node name="Lampadaire2" parent="Root" instance=ExtResource("1_pxfqq")]
+[node name="Lampadaire2" parent="Root" instance=ExtResource("2_fjhke")]
 transform = Transform3D(0.13249253, 0.4316672, -0.66038567, 0, 0.66963315, 0.43771178, 0.78895223, -0.07249194, 0.11090173, -0.00048804283, 0.8871434, 0.5921899)
 light = false
 
-[node name="Lampadaire3" parent="Root" instance=ExtResource("1_pxfqq")]
+[node name="Lampadaire3" parent="Root" instance=ExtResource("2_fjhke")]
 transform = Transform3D(0.13203804, -0.4320432, 0.6602308, 0, 0.66941166, 0.43805054, -0.7890284, -0.07229922, 0.11048472, 0, 0.887, 0.592)
 light = false
 
-[node name="Canonpadaire" parent="." instance=ExtResource("2_1brw4")]
+[node name="Canonpadaire" parent="." instance=ExtResource("3_87h4w")]
 transform = Transform3D(0.6, 0, 0, 0, 0.59999996, 0, 0, 0, 0.59999996, 2, 2.9999998, -0.035746038)
 isDecoration = true
 
-[node name="Canonpadaire2" parent="." instance=ExtResource("2_1brw4")]
+[node name="Canonpadaire2" parent="." instance=ExtResource("3_87h4w")]
 transform = Transform3D(0.6, 0, 0, 0, 0.59999996, 0, 0, 0, 0.59999996, -2, 2.9999998, -0.035746038)
 isDecoration = true
 
-[node name="Canonpadaire3" parent="." instance=ExtResource("2_1brw4")]
+[node name="Canonpadaire3" parent="." instance=ExtResource("3_87h4w")]
 transform = Transform3D(0.6, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, -3, 1.0425924, -0.2289267)
 isDecoration = true
 
-[node name="Canonpadaire4" parent="." instance=ExtResource("2_1brw4")]
+[node name="Canonpadaire4" parent="." instance=ExtResource("3_87h4w")]
 transform = Transform3D(0.6, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, 3, 1.0425924, -0.2289267)
 isDecoration = true
 
-[node name="BossHp" parent="." instance=ExtResource("4_ffeqy")]
+[node name="BossHp" parent="." instance=ExtResource("4_cfocy")]
 visible = false
 
 [node name="Area3D" type="Area3D" parent="."]

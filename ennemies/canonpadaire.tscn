@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd7ld6vqk12dq"]
+[gd_scene load_steps=9 format=3 uid="uid://dd7ld6vqk12dq"]
 
-[ext_resource type="Script" uid="uid://b3b0i41eid7tf" path="res://scripts/m_canonpadaire.gd" id="1_rt8xm"]
-[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="2_5ygvq"]
-[ext_resource type="PackedScene" uid="uid://cq2f48vn38fw6" path="res://mesh/m_projectilepadaire.tscn" id="2_nn0yu"]
-[ext_resource type="PackedScene" uid="uid://dlawcca5uduoj" path="res://scenes/bumperProjectile.tscn" id="3_nn0yu"]
+[ext_resource type="Script" uid="uid://b3b0i41eid7tf" path="res://scripts/m_canonpadaire.gd" id="1_rxk42"]
+[ext_resource type="PackedScene" uid="uid://dlawcca5uduoj" path="res://scenes/bumperProjectile.tscn" id="3_bgetx"]
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_xwtm8"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -403,9 +402,8 @@ radius = 0.88
 
 [node name="Canonpadaire" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-script = ExtResource("1_rt8xm")
-lampadaireNode = ExtResource("2_nn0yu")
-decorationBullet = ExtResource("3_nn0yu")
+script = ExtResource("1_rxk42")
+decorationBullet = ExtResource("3_bgetx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -416,54 +414,54 @@ autoplay = "fly"
 [node name="Root" type="Node3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.29999995, 0, 0, 0, 0.29999995, 0, 0, 0)
 
-[node name="Canon" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, -0.75, 0, 0)
 
-[node name="Canon2" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon2" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0.75, 0, 0)
 light = false
 
-[node name="Canon3" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon3" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0.5, 0.5, 0)
 light = false
 
-[node name="Canon4" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon4" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, -0.5, 0.5, 0)
 light = false
 
-[node name="Canon5" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon5" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, -0.5, -0.5, 0)
 light = false
 
-[node name="Canon6" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon6" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0.5, -0.5, 0)
 light = false
 
-[node name="Canon7" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon7" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, -0.75, 0)
 light = false
 
-[node name="Canon8" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="Canon8" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.9999999, 0, -0.9999999, -4.3711385e-08, 0, 0.75, 0)
 light = false
 
-[node name="CanonFond" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="CanonFond" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(1.5, 0, 0, 0, -4.371139e-09, -1.5, 0, 0.1, -6.556708e-08, 0, 0, -0.07930567)
 light = false
 
-[node name="LampaWingLeft" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="LampaWingLeft" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.13249251, 0.4316672, -0.66038567, 0, 0.66963315, 0.43771178, 0.7889522, -0.07249194, 0.11090173, 0.75, 0, -0.5)
 light = false
 
-[node name="LampaWingRight" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="LampaWingRight" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.13203804, -0.43204316, 0.66023076, 0, 0.66941166, 0.4380505, -0.7890284, -0.07229921, 0.11048471, -0.75, 0, -0.5)
 light = false
 
-[node name="LampaWingLeft2" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="LampaWingLeft2" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.13249251, 0.4316672, -0.66038567, 0, 0.66963315, 0.43771178, 0.7889522, -0.07249194, 0.11090173, 0.75, 0, -1.3681358)
 light = false
 
-[node name="LampaWingRight2" parent="Root" instance=ExtResource("2_5ygvq")]
+[node name="LampaWingRight2" parent="Root" instance=ExtResource("4_xwtm8")]
 transform = Transform3D(0.13203804, -0.43204316, 0.66023076, 0, 0.66941166, 0.4380505, -0.7890284, -0.07229921, 0.11048471, -0.75, 0, -1.3681358)
 light = false
 

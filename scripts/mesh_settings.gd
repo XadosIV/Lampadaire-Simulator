@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var light = true
-@export var jaune = false
+@export var friendly = false
 @export var bossLight = false
 
 var mat
@@ -24,15 +24,15 @@ func _ready() -> void:
 		l.omni_range = 10
 		l.light_energy = 2
 
-	if jaune:
+	if friendly:
 		turnFriendly()
 		
 func turnFriendly():
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(0, 1, 0)
+	var someMat := StandardMaterial3D.new()
+	someMat.albedo_color = Color(0, 1, 0)
 	for child in get_children():
 		if child is not OmniLight3D:
-			child.material_override = mat
+			child.material_override = someMat
 
 func turnOn():
 	$OmniLight3D.visible = true
@@ -41,7 +41,3 @@ func turnOn():
 func turnOff():
 	$OmniLight3D.visible = false
 	$interieur.set_surface_override_material(0, null)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

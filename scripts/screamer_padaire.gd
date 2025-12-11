@@ -1,13 +1,11 @@
 extends Node3D
 
-
 var timer = 2
 @export var speed: float = 35.0
 
 @export var audioStreamPlayer : AudioStreamPlayer3D
 
 var onetime = false
-
 var timerStart = false
 
 func _process(delta):
@@ -24,8 +22,5 @@ func _process(delta):
 		if not onetime:
 			audioStreamPlayer.play()
 			onetime = true
-		if position.z < -75:
-			timer = 2
-			position = Vector3(0,0,-15.31417)
-			$AnimationPlayer.play("RESET")
-			onetime = false
+		if position.z < -40:
+			get_tree().change_scene_to_file("res://scenes/Menu_simul.tscn")

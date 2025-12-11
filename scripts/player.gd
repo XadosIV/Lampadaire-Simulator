@@ -52,9 +52,10 @@ var camera_anglev = 0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		menu_pause.visible = true
-		get_tree().paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if menu_pause:
+			menu_pause.visible = true
+			get_tree().paused = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	if event is InputEventMouseButton:
 		if event.button_index == MouseButton.MOUSE_BUTTON_LEFT:

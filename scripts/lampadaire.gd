@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @export var canFollow : bool = false
 
+@export var screamer : PackedScene
+
 var dist_to_player = 2
 
 @export var player: Player
@@ -38,7 +40,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	pass
+	get_tree().change_scene_to_packed(screamer)
 	
 
 func trigger_pursuit(body: Node3D) -> void:

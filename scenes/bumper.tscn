@@ -9,7 +9,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/CollisionShape3D/CanonFond:scale")
+tracks/0/path = NodePath("Mesh:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area3D/CollisionShape3D/CanonFond:scale")
+tracks/0/path = NodePath("Mesh:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,8 +59,9 @@ libraries = {
 transform = Transform3D(1, 0, -6.981317e-05, 0, 1, 0, 6.981317e-05, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_6an6i")
 
-[node name="CanonFond" parent="Area3D/CollisionShape3D" instance=ExtResource("2_63qnk")]
-transform = Transform3D(1.5, 0, 0.00010471976, 0, 0.05, 0, -0.00010471976, 0, 1.5, 0, 0, 0)
-jaune = true
+[node name="Mesh" parent="." instance=ExtResource("2_63qnk")]
+transform = Transform3D(1.5, 0, 0, 0, 0.05, 0, 0, 0, 1.5, 0, 0, 0)
+light = false
+friendly = true
 
 [connection signal="body_entered" from="Area3D" to="." method="bounce"]

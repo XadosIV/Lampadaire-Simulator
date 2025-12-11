@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c050h4x2mylur"]
 
 [ext_resource type="Texture2D" uid="uid://co61cj3j1aaf6" path="res://images/Multipadaire_image.png" id="1_kinly"]
-[ext_resource type="Script" uid="uid://dax06o30klpnk" path="res://scripts/Popup.gd" id="1_td2ba"]
+[ext_resource type="Script" uid="uid://dax06o30klpnk" path="res://scripts/popup.gd" id="1_td2ba"]
 
 [sub_resource type="Gradient" id="Gradient_v3b0u"]
 offsets = PackedFloat32Array(0)

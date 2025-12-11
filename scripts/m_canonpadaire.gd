@@ -1,18 +1,16 @@
 extends CharacterBody3D
 
-@export var lampadaireNode : PackedScene
-
 signal shoot
-@onready var animplayer: AnimationPlayer = $AnimationPlayer
-@onready var padraies: Node3D = $Root
-var hasShot = false
-@export var isDecoration = false
+
+@onready var boss_target = get_node("../../Multipadaire/Area3D/CollisionShape3D") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
+@export var projectilePadaire : PackedScene
 @export var decorationBullet : PackedScene
-var decorationHasShot := false
 
+@onready var animplayer: AnimationPlayer = $AnimationPlayer
+@export var isDecoration = false
 
-@onready var boss = get_node("../../Multipadaire") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
-@onready var boss_target = boss.get_node("Area3D/CollisionShape3D") # ça va exploser des trucs ça si on le met ailleurs que dans la boss arena mdr
+var canShot = false
+var hasShot = false
 
 var player
 
@@ -39,13 +37,13 @@ func _process(_delta):
 		shootTimer -= _delta
 		if shootTimer <= 0:
 			shootTimer = maxShootTimer
-			var projectile : Node3D = lampadaireNode.instantiate()
+			var projectile : Node3D = projectilePadaire.instantiate()
 			get_parent().add_child(projectile)
 			projectile.position = position
 			projectile.look_at(boss_target.global_position)
 
 func shooting(body:Node3D):
-	if isDecoration: return
+	if not canShot: return
 	
 	if (body.name == "Player" && !hasShot):
 		emit_signal("shoot")
@@ -53,9 +51,8 @@ func shooting(body:Node3D):
 		hasShot = true
 
 func shootingPlayer():
-	if isDecoration:
+	if canShot:
 		shoot_decoration_bullet()
-		decorationHasShot = true
 
 func shoot_decoration_bullet():
 	if decorationBullet == null:
@@ -69,5 +66,4 @@ func shoot_decoration_bullet():
 	get_parent().add_child(projectile)
 	projectile.global_transform = $ProjectileStart.global_transform
 	projectile.get_player_pos(player.position)
-	
 	projectile.look_at(player.global_position)

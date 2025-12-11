@@ -15,7 +15,7 @@ func got_shot():
 
 func activateCanons():
 	for canon in canons:
-		canon.isDecoration = true
+		canon.canShot = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name != "Player" and body.name != "Wall": # dans le doute

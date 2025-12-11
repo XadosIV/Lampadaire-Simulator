@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bqe8lh4svn0k5" path="res://mesh/m_banc.tscn" id="2_l3n5n"]
 [ext_resource type="PackedScene" uid="uid://p6wyn34hu8ij" path="res://mesh/m_arbre.tscn" id="3_28il5"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="4_keemo"]
-[ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://scenes/lampadaire.tscn" id="5_l1cud"]
+[ext_resource type="PackedScene" uid="uid://dmoc2x7rlkrwg" path="res://ennemies/lampadaire.tscn" id="5_l1cud"]
 [ext_resource type="Script" uid="uid://coapigpmf2bvh" path="res://scripts/enemy_patrouille.gd" id="6_b4f6w"]
 [ext_resource type="PackedScene" uid="uid://dvd7ykutrn244" path="res://scenes/menu.tscn" id="7_8b6al"]
 [ext_resource type="PackedScene" uid="uid://c8wpugsf66eom" path="res://scenes/credits.tscn" id="8_l3n5n"]
