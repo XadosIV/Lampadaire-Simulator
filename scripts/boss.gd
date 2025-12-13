@@ -51,6 +51,11 @@ func explode_all() -> void:
 
 	start_fade()
 
+	var p : Petipadaire = petipadaire.instantiate()
+	var area : CollisionShape3D = p.get_node("Area3D/CollisionShape3D")
+	var shape : SphereShape3D = area.shape
+	shape.radius = 5
+
 	var markers = $Explosion.get_children()
 
 	for i in range(80):
