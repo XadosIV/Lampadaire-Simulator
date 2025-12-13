@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://p6wyn34hu8ij"]
+[gd_scene load_steps=4 format=3 uid="uid://p6wyn34hu8ij"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq860"]
 albedo_color = Color(0.51946, 0.2540386, 4.813075e-08, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gablb"]
 albedo_color = Color(0.82, 0.82, 0.82, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rgcr0"]
+height = 0.1
+radius = 1.2
 
 [node name="Arbre" type="CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32861328, 0)
@@ -18,3 +22,9 @@ radius = 1.145
 radial_segments = 20
 rings = 12
 material = SubResource("StandardMaterial3D_gablb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7534595, 0)
+shape = SubResource("CylinderShape3D_rgcr0")

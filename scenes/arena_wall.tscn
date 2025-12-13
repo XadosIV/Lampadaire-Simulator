@@ -11,35 +11,46 @@ script = ExtResource("1_o87et")
 
 [node name="Node3D" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+light = false
 
 [node name="Node3D2" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+light = false
 
 [node name="Node3D3" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+light = false
 
 [node name="Node3D4" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+light = false
 
 [node name="Node3D5" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+light = false
 
 [node name="Node3D6" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+light = false
 
 [node name="Node3D7" parent="." instance=ExtResource("1_mwhdh")]
+light = false
 
 [node name="Node3D8" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+light = false
 
 [node name="Node3D9" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+light = false
 
 [node name="Node3D10" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+light = false
 
 [node name="Node3D11" parent="." instance=ExtResource("1_mwhdh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+light = false
 
 [node name="Wall" type="StaticBody3D" parent="."]
 

@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 		if(timeto <= 0):
 			visible = true
 			disabled = false
+			col.set_deferred("disabled",false)

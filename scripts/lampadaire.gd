@@ -15,7 +15,7 @@ func _ready() -> void:
 	set_movement_target(player.global_position)
 
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if(canFollow):
 		look_at(player.position, Vector3.UP)
 		set_movement_target(player.global_position)
@@ -24,7 +24,7 @@ func _process(delta) -> void:
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if (global_position - player.global_position).length() < dist_to_player:
 		animation_player.play("bonk")
 	else:
@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	get_tree().change_scene_to_packed(screamer)
 	
 

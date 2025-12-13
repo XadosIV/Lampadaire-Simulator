@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Petipadaire
+
 @export var patrol_distance: float = 5.0
 @export var speed: float = 4.0
 

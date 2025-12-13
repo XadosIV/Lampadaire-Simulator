@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://bdxjvd45jdi71"]
+[gd_scene load_steps=13 format=4 uid="uid://bdxjvd45jdi71"]
 
 [ext_resource type="Script" uid="uid://s83q7shkt08y" path="res://scripts/boss_arena.gd" id="1_6wr5o"]
 [ext_resource type="PackedScene" uid="uid://pruwhrngihgo" path="res://scenes/arena_wall.tscn" id="2_5gcvm"]
 [ext_resource type="PackedScene" uid="uid://dgmltbxs57upd" path="res://scenes/menu_pause.tscn" id="6_6wr5o"]
+[ext_resource type="PackedScene" uid="uid://b7yuq8n2k3fmj" path="res://ennemies/petipadaire.tscn" id="6_io3m0"]
 [ext_resource type="PackedScene" uid="uid://dd7ld6vqk12dq" path="res://ennemies/canonpadaire.tscn" id="7_vi6v3"]
 [ext_resource type="PackedScene" uid="uid://dwmn41vijllfd" path="res://ennemies/multipadaire.tscn" id="9_cwigj"]
 [ext_resource type="PackedScene" uid="uid://ueipjt2jg7cl" path="res://scenes/VictoryScreen.tscn" id="9_io3m0"]
@@ -81,6 +82,7 @@ visible = false
 
 [node name="Multipadaire" parent="." instance=ExtResource("9_cwigj")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 1.3053551, 23.87467)
+petipadaire = ExtResource("6_io3m0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("10_i50kd")
@@ -94,6 +96,29 @@ visible = false
 
 [node name="VictoryScreen" parent="." instance=ExtResource("9_io3m0")]
 visible = false
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Marker3D" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 9.990039, 0.9267657, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -4.0610247, 0.9267657, 4.3770847)
+
+[node name="Marker3D4" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -4.0610247, 0.9267657, -9.03316)
+
+[node name="Marker3D3" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 13.1039295, 0.9267657, -9.03316)
+
+[node name="Marker3D5" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, -12.514189, 0.9267657, -9.03316)
+
+[node name="Marker3D6" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -12.514189, 0.9267657, 16.727154)
+
+[node name="Marker3D7" type="Marker3D" parent="Enemies"]
+transform = Transform3D(1, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999996, 15.318924, 0.9267657, 16.727154)
 
 [connection signal="defog" from="." to="CSGCombiner3D/ArenaWall2" method="disableColl"]
 [connection signal="start_boss" from="." to="Multipadaire" method="activateCanons"]

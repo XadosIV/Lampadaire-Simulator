@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ueipjt2jg7cl"]
+[gd_scene load_steps=6 format=3 uid="uid://ueipjt2jg7cl"]
 
-[ext_resource type="Script" uid="uid://dax06o30klpnk" path="res://scripts/popup.gd" id="1_70mwv"]
+[ext_resource type="Script" uid="uid://dax06o30klpnk" path="res://scripts/Popup.gd" id="1_70mwv"]
 
 [sub_resource type="Gradient" id="Gradient_v3b0u"]
 offsets = PackedFloat32Array(0)
@@ -11,6 +11,9 @@ gradient = SubResource("Gradient_v3b0u")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kinly"]
 font_size = 44
+
+[sub_resource type="LabelSettings" id="LabelSettings_33nc3"]
+font_size = 30
 
 [node name="Popup" type="Control"]
 process_mode = 3
@@ -57,13 +60,21 @@ alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanel/VBoxContainer"]
 layout_mode = 2
-text = "Vous avez gagné"
+text = "Félicitations !"
 label_settings = SubResource("LabelSettings_kinly")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+text = "Vous venez de vaincre
+le multipadaire !"
+label_settings = SubResource("LabelSettings_33nc3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Quitter" type="Button" parent="MenuPanel/VBoxContainer"]
 layout_mode = 2
-text = "Menux"
+text = "Retour au menu"
 
 [connection signal="pressed" from="MenuPanel/VBoxContainer/Quitter" to="." method="_on_winning"]

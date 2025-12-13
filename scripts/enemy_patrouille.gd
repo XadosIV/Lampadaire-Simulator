@@ -19,15 +19,20 @@ func _process(delta: float) -> void:
 	if agent.is_navigation_finished() or agent.distance_to_target() < 0.2:
 		if wait <= 0.0:
 			wait = wait_time
+			animation_player.play("bonk")
 		else:
 			wait -= delta
 			if wait <= 0.0:
 				to_b = !to_b
 				_set_target((point_b if to_b else point_a).global_position)
+				if to_b:
+					rotation_degrees = Vector3(0,0,0)
+				else:
+					rotation_degrees = Vector3(0,180,0)
 				animation_player.play("bonk")
 				
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if agent.is_navigation_finished():
 		velocity = Vector3.ZERO
 		move_and_slide()

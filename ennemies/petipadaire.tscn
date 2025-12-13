@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7yuq8n2k3fmj"]
+[gd_scene load_steps=10 format=3 uid="uid://b7yuq8n2k3fmj"]
 
 [ext_resource type="Script" uid="uid://cpfsv55qd3ct6" path="res://scripts/m_petipadaire.gd" id="1_5c0l7"]
 [ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_ojc5p"]
+[ext_resource type="AudioStream" uid="uid://cv50u25wlj4tv" path="res://lamp_ambiant.mp3" id="3_8qki2"]
 
 [sub_resource type="Animation" id="Animation_4pcrn"]
 length = 0.001
@@ -137,5 +138,12 @@ transform = Transform3D(0.8, 0, 0, 0, -3.4969112e-08, -0.8, 0, 0.8, -3.4969112e-
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
 shape = SubResource("CapsuleShape3D_5c0l7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_8qki2")
+unit_size = 1.5
+pitch_scale = 1.5
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area3D2" to="." method="_on_passiveCollision"]

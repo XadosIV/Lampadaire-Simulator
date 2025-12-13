@@ -1,13 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbw7dmg24bloj"]
+[gd_scene load_steps=13 format=3 uid="uid://bbw7dmg24bloj"]
 
 [ext_resource type="Script" uid="uid://cg2ykpef0jcyo" path="res://scripts/mesh_settings.gd" id="1_ww1qp"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnrfs"]
+albedo_color = Color(0.728822, 0.728822, 0.728822, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_mytxp"]
+material = SubResource("StandardMaterial3D_hnrfs")
 top_radius = 0.076
 bottom_radius = 0.076
 height = 2.475
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8soko"]
+albedo_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_hbpct"]
+material = SubResource("StandardMaterial3D_8soko")
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.2
@@ -21,7 +29,11 @@ albedo_color = Color(1, 1, 1, 0.39215687)
 material = SubResource("StandardMaterial3D_mytxp")
 size = Vector3(1.2, 1.2, 1.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j78r6"]
+albedo_color = Color(0.7294118, 0.7294118, 0.7294118, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_rkx2f"]
+material = SubResource("StandardMaterial3D_j78r6")
 top_radius = 0.2
 bottom_radius = 0.4
 height = 0.2
