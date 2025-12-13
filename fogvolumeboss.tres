@@ -3,8 +3,8 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gqbix"]
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_oysan"]
-seamless = true
 noise = SubResource("FastNoiseLite_gqbix")
+seamless = true
 
 [resource]
 density = 0.1

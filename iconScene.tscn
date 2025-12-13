@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dj2od2nisxj72"]
+
+[ext_resource type="PackedScene" uid="uid://bbw7dmg24bloj" path="res://mesh/m_lampadaire.tscn" id="1_i0wcp"]
+[ext_resource type="PackedScene" uid="uid://behkwmc02ctd6" path="res://scenes/player.tscn" id="2_tnxt0"]
+
+[sub_resource type="Environment" id="Environment_h1ck0"]
+background_mode = 1
+background_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+fog_enabled = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i0wcp"]
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 50)
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 0.049999997
+initial_velocity_max = 0.049999997
+gravity = Vector3(0, -0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urblq"]
+shading_mode = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_tnxt0"]
+material = SubResource("StandardMaterial3D_urblq")
+size = Vector2(0.01, 0.01)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Lampadaire" parent="." instance=ExtResource("1_i0wcp")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h1ck0")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3807774, 0)
+custom_aabb = AABB(-250, -250, -250, 500, 500, 500)
+amount = 70000
+lifetime = 6.0
+preprocess = 6.0
+process_material = SubResource("ParticleProcessMaterial_i0wcp")
+draw_pass_1 = SubResource("QuadMesh_tnxt0")
+
+[node name="Player" parent="." instance=ExtResource("2_tnxt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0828009, 5.410553)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2344455, 0)
+radius = 100.0
