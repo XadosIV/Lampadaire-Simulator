@@ -12,7 +12,7 @@ config_version=5
 
 config/name="LampadaireSimulator"
 run/main_scene="uid://c8pi17pc8ap0t"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]

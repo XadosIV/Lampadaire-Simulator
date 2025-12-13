@@ -4,7 +4,7 @@
 
 [sub_resource type="Gradient" id="Gradient_v3b0u"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 0.28235295)
+colors = PackedColorArray(0, 0, 0, 0.282353)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_4medi"]
 gradient = SubResource("Gradient_v3b0u")
@@ -50,12 +50,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -325.75
-offset_top = -250.0
-offset_right = 325.75
-offset_bottom = 250.0
+offset_top = -230.077
+offset_right = 326.25
+offset_bottom = 269.923
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 111
+theme_override_constants/separation = 141
 alignment = 1
 
 [node name="Label" type="Label" parent="MenuPanel/VBoxContainer"]
